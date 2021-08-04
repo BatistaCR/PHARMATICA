@@ -21,27 +21,27 @@
         </p>
       </div>
 
-      <form action="../BD/registro-usuarios-nuevo.php" method="POST">
+      <form action="BD/insertarContacto.php" method="POST">
 
         <div class="form-group">
           <div class="row justify-content-center ">
             <div class="col-auto flex-fill ">
               <label class="label-registro">Nombre</label>
               <input type="text" class="form-control mb-3" placeholder="Ingrese su nombre completo"
-                name="nombre_registro">
+                name="nombre_contacto">
 
               <label class="label-registro">Correo electrónico</label>
               <input type="email" class="form-control mb-3" placeholder="Ingrese su correo electrónico"
-                name="correo_registro">
+                name="correo_contacto">
 
               <label class="label-registro">Teléfono</label>
-              <input type="tel" class="form-control mb-3" pattern="[0-9]{4}-[0-9]{4}" placeholder="Ingrese su número"
-                name="clave1_registro">
+              <input type="number" class="form-control mb-3" pattern="[0-9]{4}-[0-9]{4}" placeholder="Ingrese su número"
+                name="telefono_contacto">
             </div>
             <div class="col-auto flex-fill">
               <label class="label-registro">Comentario</label>
               <textarea type="text" class=" form-control mb-3 comentario" placeholder="escriba su comentario"
-                name="clave2_registro"> </textarea>
+                name="comentario_contacto"> </textarea>
 
             </div>
           </div>
