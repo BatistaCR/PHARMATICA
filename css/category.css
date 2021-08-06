@@ -1,0 +1,30 @@
+/*INICIO CATEGORY*/
+
+.gallery {
+    /*background: #EEE;*/
+    width: 100%;
+  }
+  
+  .gallery-cell {
+    width: 20%;
+    margin-bottom: 20px;
+    /*counter-increment: gallery-cell;*/
+  }
+  
+  
+  .category-text{
+    font-size: 17px;
+    text-decoration: none;
+    color: #000;
+  }
+  .category-text :hover{
+    color: var(--red);
+  }
+  
+  .category-img{
+    width: 100px;
+    height: auto;
+  }
+  
+  
+  /*FINAL CATEGORY*/

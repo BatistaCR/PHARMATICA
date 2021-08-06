@@ -1,3 +1,14 @@
+<?php
+header("Cache-Control: no-cache, must-revalidate"); 
+     session_start();
+      if (isset($_SESSION['u_usuario'])) {
+        $no = $_SESSION['u_usuario'];
+     // echo "CON REGISTRO".$no;
+      }else{   
+       // echo "SIN REGISTRO";
+     /* header("location:../sesion.php");*/
+      }
+ ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -47,7 +58,7 @@
     </div>
   </div>
 
-  <div id="mapid"></div>
+  <div id="mapid" style="height: 400px;"></div>
 
 
   <!-- Footer -->

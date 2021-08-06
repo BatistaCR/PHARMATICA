@@ -22,16 +22,16 @@
             </p>
           </div>
 
-          <form action="../BD/registro-usuarios-nuevo.php" method="POST">
+          <form action="BD/iniciar_sesion.php" method="POST">
             <div class="form-group">
 
               <label class="label-registro">Correo electrónico</label>
               <input type="email" class="form-control mb-3" placeholder="Ingrese su correo electrónico"
-                name="correo_registro">
+                name="correo_sesion">
 
               <label class="label-registro">Contraseña</label>
               <input type="password" class="form-control mb-3" placeholder="Ingrese su contraseña"
-                name="clave1_registro">
+                name="clave_sesion">
 
               <div class="text-center">
                 <button type="submit" class="btn btn-primary btn-lg"><b>INGRESAR</b></button>

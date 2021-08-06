@@ -1,0 +1,31 @@
+/*INICIO FOOTER*/
+
+
+.page-footer{
+    background-color: var(--dark);
+    color: var(--white);
+    
+  }
+  
+  .page-footer a{
+    text-decoration: none;
+    color: var(--gray);
+  
+  }
+  
+  .page-footer li :hover{
+    color: var(--white);
+  }
+  
+  .page-footer span{
+    color: var(--gray);
+  }
+  
+  .btn-social {
+  display: inline-block;
+  padding: .375rem .75rem;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+  /*FINAL FOOTER*/

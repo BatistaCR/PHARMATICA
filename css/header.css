@@ -1,0 +1,70 @@
+/*INICIO HEADER*/
+
+.logo{
+    color: var(--dark);
+    border-radius: 50%;
+}
+
+.navbar{
+    background-color: var(--dark);
+}
+
+.navbar-brand{
+    color: var(--white);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 2rem;
+    margin-right: 2rem;
+}
+
+.navbar-collapse {
+  flex-basis: 100%;
+  flex-grow:inherit;
+  align-items: center;
+}
+
+.search-icon{
+  color: var(--dark);
+}
+
+
+.form-control{
+    border-radius: 2rem;
+    height: 3rem;
+}
+
+
+.dropdown-menu{
+  background-color: var(--dark);
+}
+
+.dropdown-item{
+  color: var(--white);
+}
+
+.btn-grad {
+    background-image: linear-gradient(rgb(255, 0, 0), rgb(59, 0, 0));
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 100% 125%;
+  color: white;
+  border-radius: 2rem;
+  display: block;
+}
+
+.btn-grad:hover {
+  background-position: bottom;
+}
+
+/*boton de sesion*/
+#link_registro{
+  text-decoration: none;
+}
+/*nombre sesion*/
+#nombre_sesion{
+  color: #fff;
+}
+
+/*FINAL HEADER*/

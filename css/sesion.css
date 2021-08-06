@@ -1,0 +1,33 @@
+/*INICIO REGISTRO Y SESION*/
+
+.login-div{
+    display: inline-block;
+    border-radius: 1.5rem;
+    border: solid 3px;
+  }
+  .titulo-registro{
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    border-radius: 1.5rem;
+    padding: 2px 1.5rem;
+    font-weight: 600;
+  }
+  
+  .nombre-registro{
+    margin-bottom: 1rem;
+  }
+  
+  .label-registro{
+   text-align: left;
+    margin-left: 1rem;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .comentario{
+    height: 230px;
+    border-radius: 1rem;
+  }
+  
+  /*FINAL REGISTRO*/

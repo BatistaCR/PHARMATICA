@@ -1,3 +1,15 @@
+<?php
+header("Cache-Control: no-cache, must-revalidate"); 
+    // session_start();
+      if (isset($_SESSION['u_usuario'])) {
+        $no = $_SESSION['u_usuario'];
+
+      }else{   
+     //   echo "SIN REGISTRO";
+     /* header("location:../../PHARMATICAS/PHARMATICAS/sesion.php");*/
+      }
+ ?>
+
 <nav class="navbar navbar-expand-xl navbar-dark">
     <div class="container">  
       <a class="navbar-brand" href="index.php">
@@ -7,8 +19,9 @@
         <span class="navbar-toggler-icon"></span>
       </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">   
-            <form class="d-flex p-2 align-items-center">
-                  <input class="form-control me-2 " type="search" placeholder="Búsqueda" aria-label="Búsqueda">
+            <form class="d-flex p-2 align-items-center" action="busqueda.php" method="POST">
+                  <input class="form-control me-2 " type="search" placeholder="Búsqueda" aria-label="Búsqueda" name="busqueda">
+                  <input type="submit" name="" style="display: none;">
                   <a class="search-icon" href="#"><img src="img/search-icon.svg" width="30" height="30" class="d-inline-block align-center" alt=""></a>
               </form>
               
@@ -24,15 +37,34 @@
                     </ul>
                     </li>
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Conócenos</a>
+                <a class="nav-link" aria-current="page" href="conocenos.php">Conócenos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Contáctanos</a>
+                <a class="nav-link" href="contacto.php">Contáctanos</a>
               </li>
             </ul>
-            <form action="">
+            <?php 
+            if (isset($no)) { ?>
+
+           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <?php echo "<b id='nombre_sesion'>".$no."</b>"; ?>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Perfil</a></li>
+                      <li><a class="dropdown-item" href="BD/exit.php">Cerrar Sesion</a></li>
+                     
+                    </ul>
+                    </li>
+            </ul>
+       
+           <?php }else{
+             ?>
+              <a href="sesion.php" id="link_registro">
               <button class="btn-grad" type="submit"><b>Ingresar</b></button>
-              </form>
+              </a>
+              <?php } ?>
         </div>
     </div>
   </nav>

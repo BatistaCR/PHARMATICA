@@ -22,7 +22,7 @@
             </p>
           </div>
 
-          <form action="../BD/registro-usuarios-nuevo.php" method="POST">
+          <form action="BD/registro_usuarios_nuevo.php" method="POST">
             <div class="form-group">
               <label class="label-registro">Nombre</label>
               <input type="text" class="form-control mb-3" placeholder="Ingrese su nombre completo"

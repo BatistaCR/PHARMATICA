@@ -1,3 +1,15 @@
+<?php
+header("Cache-Control: no-cache, must-revalidate"); 
+     session_start();
+      if (isset($_SESSION['u_usuario'])) {
+        $no = $_SESSION['u_usuario'];
+     // echo "CON REGISTRO".$no;
+      }else{   
+       // echo "SIN REGISTRO";
+     /* header("location:../../PHARMATICAS/PHARMATICAS/sesion.php");*/
+      }
+ ?>
+
 <!doctype html>
 <html lang="es">
 
@@ -14,7 +26,7 @@
   <!-- Categorías -->
   <?php include('vistas/category.php'); ?>
 
-  <div id="mapid"></div>
+  <div id="mapid" style="height: 400px;"></div>
 
   <!-- Footer -->
   <?php include('vistas/footer.php') ?>

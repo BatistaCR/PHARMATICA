@@ -1,3 +1,15 @@
+<?php
+header("Cache-Control: no-cache, must-revalidate"); 
+     session_start();
+      if (isset($_SESSION['u_usuario'])) {
+        $no = $_SESSION['u_usuario'];
+     // echo "CON REGISTRO".$no;
+      }else{   
+       // echo "SIN REGISTRO";
+     /* header("location:../pharmatica/sesion.php");*/
+      }
+ ?>
+
 <!doctype html>
 <html lang="es">
 <!-- Head -->
@@ -21,27 +33,27 @@
         </p>
       </div>
 
-      <form action="BD/insertarContacto.php" method="POST">
+      <form action="../BD/registro-usuarios-nuevo.php" method="POST">
 
         <div class="form-group">
           <div class="row justify-content-center ">
             <div class="col-auto flex-fill ">
               <label class="label-registro">Nombre</label>
               <input type="text" class="form-control mb-3" placeholder="Ingrese su nombre completo"
-                name="nombre_contacto">
+                name="nombre_registro">
 
               <label class="label-registro">Correo electrónico</label>
               <input type="email" class="form-control mb-3" placeholder="Ingrese su correo electrónico"
-                name="correo_contacto">
+                name="correo_registro">
 
               <label class="label-registro">Teléfono</label>
-              <input type="number" class="form-control mb-3" pattern="[0-9]{4}-[0-9]{4}" placeholder="Ingrese su número"
-                name="telefono_contacto">
+              <input type="tel" class="form-control mb-3" pattern="[0-9]{4}-[0-9]{4}" placeholder="Ingrese su número"
+                name="clave1_registro">
             </div>
             <div class="col-auto flex-fill">
               <label class="label-registro">Comentario</label>
               <textarea type="text" class=" form-control mb-3 comentario" placeholder="escriba su comentario"
-                name="comentario_contacto"> </textarea>
+                name="clave2_registro"> </textarea>
 
             </div>
           </div>
