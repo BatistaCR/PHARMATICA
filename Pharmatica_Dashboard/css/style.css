@@ -1,0 +1,53 @@
+body {
+  background: url("../IMG/font.jpg") no-repeat #000;
+  background-size: cover;
+}
+.fm{
+  background: rgba(0,0,0,0.4);
+margin-top: 8%;
+ position: absolute;
+ margin-left: 30%;
+ margin: center;
+ width: 38%;
+ height:350px;
+ border-radius: 10px;
+}
+
+input[type=text] {
+  width: 95%;
+  padding: 5px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 18px;
+   border-radius: 6px;
+}
+
+input[type=password] {
+  width: 95%;
+  padding: 5px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-family: sans-serif;
+   border-radius: 6px;
+}
+
+input[type=submit] {
+background: #CD4812;
+color: white;
+border-style: outset;
+border-color: #E05820;
+height: 50px;
+width: auto;
+font: bold 15px arial, sans-serif;
+text-shadow:none;
+font-size: 20px;
+font-family: sans-serif;
+ border-radius: 6px;
+}
+
+label{
+  color: white;
+  font-size: 22px;
+  font-family: sans-serif;
+}
