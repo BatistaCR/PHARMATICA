@@ -5,7 +5,7 @@ header("Cache-Control: no-cache, must-revalidate");
         $no = $_SESSION['u_usuario'];
      // echo "CON REGISTRO".$no;
       }else{   
-       // echo "SIN REGISTRO";
+     //  echo "SIN REGISTRO";
       header("location:../../PHARMATICA/sesion.php");
       }
  ?>
@@ -40,20 +40,24 @@ header("Cache-Control: no-cache, must-revalidate");
   <div class="d-flex" id="wrapper">
 
     <!-- Sidebar -->
-    <div class="bg-light border-right" id="sidebar-wrapper" >
-      <div class="sidebar-heading">ADMINISTRADOR</div>
+    <div class="border-right" id="sidebar-wrapper" style="background-color: #000000;">
+      <center><div class="sidebar-heading"><img src="../img/logo.png" width="175px" height="175px" style="border: solid 5px #fff; border-radius: 50%;"></div></center>
       <div class="list-group list-group-flush">
 
-
-       <a href="#" class="list-group-item list-group-item-action bg-light"></a>
+       <style type="text/css">
+         #link_a:hover{
+           background-color: #fff;
+         }
+       </style>
+       <a href="#" id="link_a" class="list-group-item list-group-item-action" style="background-color: #000000;"></a>
 
      
 
-        <a href="?ir=Wait" class="list-group-item list-group-item-action bg-light">INICIO</a>
-        <a href="?ir=RegistDiario" class="list-group-item list-group-item-action bg-light">ORDENES</a>
-        <a href="?ir=List" class="list-group-item list-group-item-action bg-light">CLIENTES</a>
-        <a href="?ir=Inv" class="list-group-item list-group-item-action bg-light">PRODUCTOS</a>
-        <a href="?ir=Inv" class="list-group-item list-group-item-action bg-light">MENSAJERIA</a>
+        <a href="?ir=Wait" id="link_a" class="list-group-item list-group-item-action" style="background-color: #000000; color: #fff;">INICIO</a>
+        <a href="?ir=RegistDiario" class="list-group-item list-group-item-action" style="background-color: #000000;  color: #fff;">ORDENES</a>
+        <a href="?ir=List" class="list-group-item list-group-item-action" style="background-color: #000000;  color: #fff;">CLIENTES</a>
+        <a href="?ir=Inv" class="list-group-item list-group-item-action" style="background-color: #000000;  color: #fff;">PRODUCTOS</a>
+        <a href="?ir=Inv" class="list-group-item list-group-item-action" style="background-color: #000000;  color: #fff;">MENSAJERIA</a>
        <!-- <a href="?ir=Regs" class="list-group-item list-group-item-action bg-light">Registro Nuevo</a>-->
 
        <!-------  INVENTARIO MENU 
@@ -104,7 +108,7 @@ header("Cache-Control: no-cache, must-revalidate");
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" href="index.php">INICIO <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index.php"><h5><?php echo $no; ?></h5><span class="sr-only">(current)</span></a>
             </li>
             <!--<li class="nav-item">
               <a class="nav-link" href="#">Link</a>

@@ -6,7 +6,7 @@ header("Cache-Control: no-cache, must-revalidate");
      // echo "CON REGISTRO".$no;
       }else{   
        // echo "SIN REGISTRO";
-     /* header("location:../pharmatica/sesion.php");*/
+      header("location:../pharmatica/sesion.php");
       }
  ?>
 
