@@ -1,9 +1,18 @@
 <?php
+include("./BD/conexion2.php");
 header("Cache-Control: no-cache, must-revalidate"); 
     // session_start();
       if (isset($_SESSION['u_usuario'])) {
         $no = $_SESSION['u_usuario'];
 
+     
+$consul = "SELECT tipo_usuario FROM t_usuarios_general WHERE  nombre_user_general  = '$no'  ";
+
+$exe = mysqli_query($conexion2,$consul);
+
+while($t = mysqli_fetch_array($exe)){ 
+  $nivel = $t['tipo_usuario'];
+}
       }else{   
      //   echo "SIN REGISTRO";
      /* header("location:../../PHARMATICAS/PHARMATICAS/sesion.php");*/
@@ -52,6 +61,11 @@ header("Cache-Control: no-cache, must-revalidate");
                       <?php echo "<b id='nombre_sesion'>".$no."</b>"; ?>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <?php 
+                       if ($nivel == 1) {
+                       ?>
+                       <li><a class="dropdown-item" href="Pharmatica_Dashboard/">Panel Admin</a></li>
+                     <?php } ?>
                       <li><a class="dropdown-item" href="#">Perfil</a></li>
                       <li><a class="dropdown-item" href="BD/exit.php">Cerrar Sesion</a></li>
                      

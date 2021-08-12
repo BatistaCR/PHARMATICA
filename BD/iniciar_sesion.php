@@ -45,7 +45,7 @@ if ($resul = mysqli_fetch_array($sql)) {
 } else {
 	 echo "<script>
      alert('Usuario no registrado');
-     location.href='../../PHARMATICAS/sesion.php';
+     location.href='../../PHARMATICA/sesion.php';
 	</script>";
 	
 }
