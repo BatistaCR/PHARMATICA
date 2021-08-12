@@ -1,11 +1,11 @@
 <!doctype html>
-<html class="bg-gray" lang="es">
+<html lang="es">
 
 <!-- Head -->
 <?php include('vistas/head.php') ?>
 
 <body>
-
+<section class="bg-gray py-03">
 <div class="container-fluid">
     <div class="text-center mf-03">
       <h2 class="titulo-registro">NUESTROS PRODUCTOS</h2>
@@ -36,6 +36,7 @@
     ?>
     </div>
   </div>
+  </section>
 
   <!-- Scripts -->
   <?php include('vistas/scripts.php') ?>
