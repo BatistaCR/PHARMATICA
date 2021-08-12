@@ -14,15 +14,11 @@
    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
    crossorigin=""/>
 
-    <link rel="stylesheet" href="css/styles.css">
+
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/bs_style.css">
-    <link rel="stylesheet" href="css/busqueda.css">
     <link rel="stylesheet" href="css/carousel.css">
     <link rel="stylesheet" href="css/category.css">
-    <link rel="stylesheet" href="css/conocenos.css">
-    <link rel="stylesheet" href="css/contacto.css">
-    <link rel="stylesheet" href="css/detalle.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/productos.css">

@@ -1,10 +1,4 @@
-<!doctype html>
-<html lang="es">
 
-<!-- Head -->
-<?php include('vistas/head.php') ?>
-
-<body>
 <section class="bg-gray py-03">
 <div class="container-fluid">
     <div class="text-center mf-03">
@@ -37,8 +31,3 @@
     </div>
   </div>
   </section>
-
-  <!-- Scripts -->
-  <?php include('vistas/scripts.php') ?>
-</body>
-</html>
