@@ -39,6 +39,6 @@
   </section>
 
   <!-- Scripts -->
-  <?php include('vistas/scripts.php') ?>
+  <?php// include('vistas/scripts.php') ?>
 </body>
 </html>
