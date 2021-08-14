@@ -21,17 +21,17 @@ while($t = mysqli_fetch_array($exe)){
 
 <nav class="navbar navbar-expand-xl navbar-dark">
     <div class="container">  
-      <a class="navbar-brand" href="index.php">
+      <a class="navbar-brand" href="index">
         <img class="logo me-3" src="img/logo.png" width="60" height="60" class="d-inline-block" alt="">PHARMATICA
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">   
-            <form class="d-flex p-2 align-items-center" action="busqueda.php" method="POST">
+            <form class="d-flex p-2 align-items-center" action="busqueda" method="POST">
                   <input class="form-control me-2 " type="search" placeholder="Búsqueda" aria-label="Búsqueda" name="busqueda">
                   <input type="submit" name="" style="display: none;">
-                  <a class="search-icon" href="#"><img src="img/search-icon.svg" width="30" height="30" class="d-inline-block align-center" alt=""></a>
+                  <button class="search-icon" href="busqueda"><img src="img/search-icon.svg" width="30" height="30" class="d-inline-block align-center" alt=""></button>
               </form>
               
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -46,10 +46,10 @@ while($t = mysqli_fetch_array($exe)){
                     </ul>
                     </li>
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="conocenos.php">Conócenos</a>
+                <a class="nav-link" aria-current="page" href="conocenos">Conócenos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contacto.php">Contáctanos</a>
+                <a class="nav-link" href="contacto">Contáctanos</a>
               </li>
             </ul>
             <?php 
@@ -75,7 +75,7 @@ while($t = mysqli_fetch_array($exe)){
        
            <?php }else{
              ?>
-              <a href="sesion.php" id="link_registro">
+              <a href="sesion" id="link_registro">
               <button class="btn-grad" type="submit"><b>Ingresar</b></button>
               </a>
               <?php } ?>

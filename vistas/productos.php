@@ -15,7 +15,7 @@
     $exe = mysqli_query($conexion,$consul);
     while($t = mysqli_fetch_array($exe)){ ?>
     
-    <a href="detalle.php?id=<?php echo $t['id_prod_inv']; ?>">
+    <a href="detalle?id=<?php echo $t['id_prod_inv']; ?>">
       <div class="col tarjeta">
           <img src="img/productos/<?php echo $t['img_producto']; ?>" class="py-02" alt="...">
           <div class="card-body">
