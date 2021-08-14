@@ -53,7 +53,7 @@ while($t = mysqli_fetch_array($exe)){ ?>
   }
 </style>
 
-<a href="detalle?id=<?php echo base64_encode($t['id_prod_inv']); ?>">
+<a href="detalle?id=<?php echo $t['id_prod_inv']; ?>">
 <div id="d">
 <div class="row row-cols-1 row-cols-md-4 g-4 m-5" id="cajas">
   <div class="col">
