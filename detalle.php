@@ -38,45 +38,74 @@ $exe = mysqli_query($conexion,$consul);
 while($t = mysqli_fetch_array($exe)){ ?>
 
 <style type="text/css">
-#caja1{
-width: 40%;
-background-color: red;
-float: left;
+.caja{
+  
+overflow: hidden;
+
 }
-#titulo{
- /* float: right;
-  margin-top: -450px;
-  margin-right: 800px;*/
+
+.caja img{
+  height: 100%;
+    width: 30vh;
 }
-#titulo2{
- /* float: right;
-  margin-top: -400px;
-  margin-right: 550px;*/
+
+.btn-box{
+  width: 2rem;
+  height: 100%;
+  background-color:blue;
+  color: white;
 }
-#titulo3{
-  /*float: right;
-  margin-top: -300px;
-  margin-right: 550px;*/
-}
-#detalles_p{
-  background-color: greenyellow;
-  height: 100px;
-  width: 500px;
-  float: left;
+
+.contador{
+  border-radius: 0.5rem;
+  border: solid 2px blue;
+  width: auto;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
 }
 </style>
 
-<div>
+<!--BREADCRUM-->
+<nav aria-label="breadcrumb" class="bc-black py-01">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">pagina</li>
+  </ol>
+</nav>
+<!--BREADCRUM-->
 
-<div id="caja1">
-  <img src="img/productos/<?php echo $t['img_producto']; ?>" width="100%">
+<div class="container pf-02 ja-center">
+  <div class="row">
+<div class="col-auto caja">
+          <img src="img/productos/<?php echo $t['img_producto']; ?>" alt="...">
 </div>
 
-<div id="detalles_p">
-<h1 id="titulo"><b><?php echo $t['nombre_prod_inv']; ?></b></h1>
-<h2 id="titulo2"><b>PRECIO POR UNIDAD</b></h2>
-<h1 id="titulo3"><b><?php  echo $t['precio_unidad']; ?></b></h1>
+<div class="col px-05">
+<h1 class="ts-09" ><b><?php echo $t['nombre_prod_inv']; ?></b></h1>
+<?php 
+              if($t['precio_unidad'] == "" AND $t['precio_caja'] != "") {  ?>
+                <p class="fs-10"><b>PRECIO POR CAJA</b></p>
+                <p class="fs-10 cr-red"><b>₡<?php  echo $t['precio_caja']; ?>+i.v.a.</b></p>
+            <?php  }elseif($t['precio_unidad'] != ""){ ?>
+            <p class="fs-10"><b>PRECIO POR UNIDAD</b></p>
+            <p class="fs-10 cr-red"><b>₡<?php echo $t['precio_unidad']; ?>+i.v.a.</b></p>
+          <?php  }else{
+            echo "<p class='fs-10'><b>VER DETALLES</b></p>";
+            }
+            ?>
+            <div class="row ja-center bc-red ta-center fd-row">
+            <p class="fs-05 mx-05">cantidad</p> 
+            <div class="fd-row contador">
+            <button type="button" class="btn-box" value="-">-</button>
+            <input type="number" name="" id="">
+            <button type="button" class="btn-box" value="+">+</button>
+            </div>
+          </div>
 </div>
+
+</div>
+  
 
   <?php
 }
