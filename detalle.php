@@ -41,21 +41,29 @@ while($t = mysqli_fetch_array($exe)){ ?>
 <style type="text/css">
 #caja1{
 width: 40%;
+background-color: red;
+float: left;
 }
 #titulo{
-  float: right;
+ /* float: right;
   margin-top: -450px;
-  margin-right: 800px;
+  margin-right: 800px;*/
 }
 #titulo2{
-  float: right;
+ /* float: right;
   margin-top: -400px;
-  margin-right: 550px;
+  margin-right: 550px;*/
 }
 #titulo3{
-  float: right;
+  /*float: right;
   margin-top: -300px;
-  margin-right: 550px;
+  margin-right: 550px;*/
+}
+#detalles_p{
+  background-color: greenyellow;
+  height: 100px;
+  width: 500px;
+  float: left;
 }
 </style>
 
@@ -65,9 +73,10 @@ width: 40%;
   <img src="img/productos/<?php echo $t['img_producto']; ?>" width="100%">
 </div>
 
+<div id="detalles_p">
 <h1 id="titulo"><b><?php echo $t['nombre_prod_inv']; ?></b></h1>
 <h2 id="titulo2"><b>PRECIO POR UNIDAD</b></h2>
-<h1 id="titulo3"><b><?php  echo $t['precio_prod_inv']; ?></b></h1>
+<h1 id="titulo3"><b><?php  echo $t['precio_unidad']; ?></b></h1>
 </div>
 
   <?php
