@@ -17,7 +17,11 @@
 						break;
 					case 'Deleteuser':
 						include_once'./Vistas./deleteuser.php';
+						break;
+					case 'PRODUCTOS':
+						include_once'./Vistas./productos_general.php';
 						break;	
+					
 					
 
                    /*****************/
