@@ -29,7 +29,7 @@ header("Cache-Control: no-cache, must-revalidate");
     <?php 
     include("BD/conexion.php");
      $dato = $_POST['busqueda'];
-$consul = "SELECT * FROM  t_inventario_general_web WHERE  nombre_prod_inv = '$dato' OR precio_prod_inv = '$dato' ";
+$consul = "SELECT * FROM  t_inventario_general_web WHERE  nombre_prod_inv = '$dato' OR precio_unidad   = '$dato' ";
 
 $exe = mysqli_query($conexion,$consul);
 
@@ -61,7 +61,7 @@ while($t = mysqli_fetch_array($exe)){ ?>
       <img src="img/productos/<?php echo $t['img_producto']; ?>" alt="..." height="100px">
       <div class="card-body">
         <h3 class="card-title"> <strong><?php echo $t['nombre_prod_inv']; ?></strong></h3>
-        <p class="card-text"><?php echo $t['precio_prod_inv']; ?></p>
+        <p class="card-text"><?php echo $t['precio_unidad']; ?></p>
         <p class="fs-3">₡00.000 +iva</p>
       </div>
     </div>
