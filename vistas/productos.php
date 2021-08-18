@@ -11,7 +11,7 @@
     <!--AQUI SE DEBE INICIAR EL ARRAY-->
     <?php 
     include("BD/conexion.php");
-    $consul = "SELECT * FROM  t_inventario_general_web";
+    $consul = "SELECT * FROM  t_inventario_general_web ORDER BY rand()";
     $exe = mysqli_query($conexion,$consul);
     while($t = mysqli_fetch_array($exe)){ ?>
     
@@ -20,8 +20,18 @@
           <img src="img/productos/<?php echo $t['img_producto']; ?>" class="py-02" alt="...">
           <div class="card-body">
             <h3 class="card-title"> <strong><?php echo $t['nombre_prod_inv']; ?></strong></h3>
+            <?php 
+              if($t['precio_unidad'] == "" AND $t['precio_caja'] != "") {  ?>
+                <p class="card-text">PRECIO POR CAJA</p>
+                <p class="fs-3"><?php  echo $t['precio_caja']; ?></p>
+            <?php  }elseif($t['precio_unidad'] != ""){ ?>
             <p class="card-text">PRECIO POR UNIDAD</p>
-            <p class="fs-3"><?php  echo $t['precio_prod_inv']; ?></p>
+            <p class="fs-3"><?php echo $t['precio_unidad']; ?></p>
+          <?php  }else{
+            echo "<p class='card-text'>VER DETALLES</p>";
+            }
+            ?>
+          
           </div>
         </div>
               <!--FINALIZA EL ARRAY-->
