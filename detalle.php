@@ -12,7 +12,6 @@ header("Cache-Control: no-cache, must-revalidate");
  
 <!DOCTYPE html>
 <html lang="es">
-hola todo bien
 <!-- Head -->
 <?php include('vistas/head.php') ?>
 
