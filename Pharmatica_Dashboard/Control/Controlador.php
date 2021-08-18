@@ -20,6 +20,9 @@
 						break;
 					case 'PRODUCTOS':
 						include_once'./Vistas./productos_general.php';
+						break;
+					case 'DeleteProductos':
+						include_once'./Vistas./delete_prod_inv.php';
 						break;	
 					
 					
