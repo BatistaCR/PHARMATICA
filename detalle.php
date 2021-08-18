@@ -74,9 +74,11 @@ float: left;
 </div>
 
 <div id="detalles_p">
+
 <h1 id="titulo"><b><?php echo $t['nombre_prod_inv']; ?></b></h1>
 <h2 id="titulo2"><b>PRECIO POR UNIDAD</b></h2>
 <h1 id="titulo3"><b><?php  echo $t['precio_unidad']; ?></b></h1>
+
 </div>
 
   <?php

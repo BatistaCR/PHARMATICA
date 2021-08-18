@@ -47,6 +47,10 @@ include("./conexion.php");
   </div>-->
 <input type="hidden" name="id_prod" value="<?php echo $e['id_prod_inv']; ?>">
 
+<input type="hidden" name="img1" value="<?php echo $e['img_producto']; ?>">
+<input type="hidden" name="img2" value="<?php echo $e['img_producto2']; ?>">
+<input type="hidden" name="img3" value="<?php echo $e['img_producto3']; ?>">
+
 <div class="form-group">
       <label for="exampleInputPassword1">CODIGO</label>
     <input name="c_prod" type="text" class="form-control"
@@ -88,76 +92,51 @@ include("./conexion.php");
     <textarea name="contra_prod" class="form-control" id="exampleFormControlTextarea1" rows="3"><?php echo $e['contraindicaciones_prod']; ?></textarea>
   </div>
 
-
+<input class="inputFile" type="file" style="display: none;">
 <script type="text/javascript">
 
-function editarIMG1()
+/*function editarIMG1()
   {  
-var x = document.getElementById("upd_img");
+var x = document.getElementById("upd_img1");
+var lb1 = document.getElementById("label1");
     if (x.style.display === "none") {
-
+       
        x.style.display = "";
-    
+       lb1.style.display = "";
     }else{
       x.style.display = "none";
-    }
-
-
-
-
-
-  //document.getElementById('upd_img').style.display = "";
-  //document.getElementById('lb_caja').style.display = "";
-     
- /*       
-  document.getElementById('caja').style.display = "none";
-  document.getElementById('lb_caja').style.display = "none";*/
-         
-}
+      lb1.style.display = "none";
+    }    
+}*/
 </script>
 
-
-
-
-
-
-
 <div style="width:100%">
-  <div style="background-color: yellow; width:30%; float: left ;">
-    <img src="IMG/IMG_PRODUCTOS/<?php echo $e['img_producto']; ?>" width="120px" height="120px" onclick="editarIMG1()">
+  <div style="background-color: ; width:30%; float: left ;">
+   <label> 
+    <img src="IMG/IMG_PRODUCTOS/<?php echo $e['img_producto']; ?>" width="120px" height="120px" title="Click para actualizar">
+    <input name="img_prod1" type="file" style="display:none;">
+   </label>
   </div>
 
-  <div style="background-color: yellow; width:30%; float: left; margin-left: 15px;">
-    <img src="IMG/IMG_PRODUCTOS/<?php echo $e['img_producto2']; ?>" width="120px" height="120px">
+  <div style="background-color: ; width:30%; float: left; margin-left: 15px;">
+    <label>
+    <img src="IMG/IMG_PRODUCTOS/<?php echo $e['img_producto2']; ?>" width="120px" height="120px" title="Click para actualizar" >
+    <input type="file" name="img_prod2" id="upd_img2" style="display:none;">
+    </label>
   </div>
 
-  <div style="background-color: yellow; width:30%; float: left;margin-left: 15px;">
-    <img src="IMG/IMG_PRODUCTOS/<?php echo $e['img_producto3'];} ?>" width="120px" height="120px">
+  <div style="background-color: ; width:30%; float: left;margin-left: 15px;">
+    <label>
+    <img src="IMG/IMG_PRODUCTOS/<?php echo $e['img_producto3'];} ?>" width="120px" height="120px" title="Click para actualizar">
+    <input type="file" name="img_prod3" id="upd_img3" style="display:none;">
+    </label>
   </div>
 
 </div>
 
 
-
-<div class="form-group">
- <!--   <label for="exampleFormControlFile1" >IMAGEN 1</label>-->
-    <input type="file" name="img_prod1" class="form-control-file"
-     id="upd_img" style="display:none;">
-</div>
-
-
-
-  <div class="form-group">
-    <label for="exampleFormControlFile1">IMAGEN 2</label>
-    <input type="file" name="img_prod[]" class="form-control-file" id="exampleFormControlFile1" multiple>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlFile1">IMAGEN 3</label>
-    <input type="file" name="img_prod[]" class="form-control-file" id="exampleFormControlFile1" multiple>
-  </div>
-
-
-<input type="submit" name="" class="btn btn-success">
+<br><br><br><br><br><br>
+<input type="submit" name="" class="btn btn-success" value="ACTUALIZAR"><br><br>
         </form>
 
 </div>
@@ -166,6 +145,7 @@ var x = document.getElementById("upd_img");
 
 
 <?php   
+/*@derechos reservados*/
   }else{
 ?>
 
@@ -306,7 +286,7 @@ while ($f = mysqli_fetch_array($sql)) {
 
   <td><b><a class="lk" href="../Pharmatica_Dashboard/?ir=PRODUCTOS&editar=<?php echo
    $f['id_prod_inv']?>" title="Mover">EDITAR</a></b></td>
-  <td><b><a class="lk" href="../AdminGPC/?ir=Del_Noticias&idFM=<?php echo 
+  <td><b><a class="lk" href="../Pharmatica_Dashboard/?ir=DeleteProductos&id=<?php echo 
   $f['id_prod_inv']?>">ELIMINAR</a></b></td>
   
   <?php
@@ -315,6 +295,9 @@ while ($f = mysqli_fetch_array($sql)) {
 echo "</table>";
 
 ?>
+
+
+
 <div class="paginador">
       
       <?php 
@@ -332,6 +315,6 @@ echo "</table>";
 echo "<a href= '../Pharmatica_Dashboard/?ir=PRODUCTOS&pagina==$total_paginas' > "/*."Ultima"*/."</a></center>";
        ?>
 </div>
-   
+
 
 
