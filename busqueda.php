@@ -29,7 +29,9 @@ header("Cache-Control: no-cache, must-revalidate");
     <?php 
     include("BD/conexion.php");
      $dato = $_POST['busqueda'];
-$consul = "SELECT * FROM  t_inventario_general_web WHERE  nombre_prod_inv = '$dato' OR precio_unidad = '$dato' ";
+
+$consul = "SELECT * FROM  t_inventario_general_web WHERE  nombre_prod_inv = '$dato' OR precio_unidad   = '$dato' ";
+
 
 $exe = mysqli_query($conexion,$consul);
 

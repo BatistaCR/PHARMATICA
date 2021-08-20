@@ -12,7 +12,6 @@ header("Cache-Control: no-cache, must-revalidate");
  
 <!DOCTYPE html>
 <html lang="es">
-hola todo bien
 <!-- Head -->
 <?php include('vistas/head.php') ?>
 
@@ -39,54 +38,65 @@ $exe = mysqli_query($conexion,$consul);
 while($t = mysqli_fetch_array($exe)){ ?>
 
 <style type="text/css">
-#caja1{
-width: 40%;
-background-color: red;
-float: left;
-}
-#titulo{
- /* float: right;
-  margin-top: -450px;
-  margin-right: 800px;*/
-}
-#titulo2{
- /* float: right;
-  margin-top: -400px;
-  margin-right: 550px;*/
-}
-#titulo3{
-  /*float: right;
-  margin-top: -300px;
-  margin-right: 550px;*/
-}
-#detalles_p{
-  background-color: greenyellow;
-  height: 100px;
-  width: 500px;
-  float: left;
-}
+
+
 </style>
 
-<div>
+<!--BREADCRUM-->
+<nav aria-label="breadcrumb" class="bc-black py-01">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">pagina</li>
+  </ol>
+</nav>
+<!--BREADCRUM-->
 
-<div id="caja1">
-  <img src="img/productos/<?php echo $t['img_producto']; ?>" width="100%">
+
+<form action="#" method="POST">
+  <div class="container">
+  <div class="row pf-03 ja-center my-05">
+          <img class="img-escalada-full" src="img/productos/<?php echo $t['img_producto']; ?>" alt="...">
+
+
+
+
+<div class="col text-center">
+<h1 class="fs-06 fw-06" ><?php echo $t['nombre_prod_inv']; ?></h1>
+<?php 
+              if($t['precio_unidad'] == "" AND $t['precio_caja'] != "") {  ?>
+                <p class="fs-03">PRECIO POR CAJA</p>
+                <p class="fs-05 cr-red">₡<?php  echo $t['precio_caja']; ?>+i.v.a.</p>
+            <?php  }elseif($t['precio_unidad'] != ""){ ?>
+            <p class="fs-03">PRECIO POR UNIDAD</p>
+            <p class="fs-05 cr-red">₡<?php echo $t['precio_unidad']; ?>+i.v.a.</p>
+          <?php  }else{
+            echo "<p class='fs-05'>VER DETALLES</p>";
+            }
+            ?>
+            <div class="row ">
+              <div class="col-12 col-md-5 ja-center fd-column">
+            <p class="fs-03">cantidad</p> 
+            <div class="fd-row">
+            <button type="button" class="btn-box-left" onclick="menos()">-</button>
+            <input class="input" type="number" name="" id="input" value="1" min="1" oninput="this.value = Math.abs(this.value)" 
+            onKeyUp="pierdeFoco(this)" required>
+            <button type="button" class="btn-box-right" onclick="mas()">+</button>
+          </div>
+            </div>
+            <div class="col-12 col-md-7 ja-center mt-03 " id="carrito">
+              <img class="carrito" src="./img/carrito.png" alt="">
+            <button  class="bn bn-red fs-03 ja-center "><span>agregar al carrito</span></button>
+          </div>
+          </div>
+          
 </div>
-
-<div id="detalles_p">
-
-<h1 id="titulo"><b><?php echo $t['nombre_prod_inv']; ?></b></h1>
-<h2 id="titulo2"><b>PRECIO POR UNIDAD</b></h2>
-<h1 id="titulo3"><b><?php  echo $t['precio_unidad']; ?></b></h1>
-
 </div>
+  
 
   <?php
 }
-    ?>
-  </div><br>
-
-
+    ?><br>
+</div>
+</form>
 
 
   <!-- Footer -->
@@ -94,6 +104,35 @@ float: left;
 
   <!-- Scripts -->
   <?php include('vistas/scripts.php') ?>
+
+    <!-- Script contador -->
+
+  <script>
+  
+  function mas() {
+      document.getElementById("input").value++;
+  }
+  
+  function menos() {
+      var valor = document.getElementById("input").value;
+      
+  
+      if (valor == 1) {
+    }else if(valor < 1){
+      document.getElementById("input").value++;
+    }
+    else{
+        document.getElementById("input").value--;
+    }
+      
+  }
+
+  function pierdeFoco(e){
+    var valor = e.value.replace(/^0*/, '');
+    e.value = valor;
+  }
+  </script>
+
 </body>
 
 </html>

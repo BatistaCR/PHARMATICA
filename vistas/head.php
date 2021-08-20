@@ -1,4 +1,7 @@
 <head>
+  <!-- Imagenes adaptativas -->
+    <script>document.cookie='resolution='+Math.max(screen.width,screen.height)+'; path=/';</script>
+    
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +19,8 @@
 
 
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/bs_style.css">
+    <link rel="stylesheet" href="css/pc_style.css">
+    <link rel="stylesheet" href="css/phone_style.css">
     <link rel="stylesheet" href="css/carousel.css">
     <link rel="stylesheet" href="css/category.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -24,6 +28,7 @@
     <link rel="stylesheet" href="css/productos.css">
     <link rel="stylesheet" href="css/registro.css">
     <link rel="stylesheet" href="css/sesion.css">
+    <link rel="stylesheet" href="css/detalle.css">
 
 
     <title>PHARMATICA</title>
