@@ -179,10 +179,14 @@ function comprobar2(obj)
         
   document.getElementById('caja').style.display = "";
   document.getElementById('lb_caja').style.display = "";
+  document.getElementById('C_caja').style.display = "";
+  //document.getElementById('cantidad_unidad').style.display = "";
      } else{
         
   document.getElementById('caja').style.display = "none";
   document.getElementById('lb_caja').style.display = "none";
+  document.getElementById('C_caja').style.display = "none";
+  //document.getElementById('cantidad_unidad').style.display = "none";
      }     
 }
 
@@ -192,22 +196,26 @@ function comprobar1(obj)
         
   document.getElementById('unidad').style.display = "";
   document.getElementById('lb_unidad').style.display = "";
+  document.getElementById('C_unidad').style.display = "";
+ // document.getElementById('cantidad_caja').style.display = "";
      } else{
         
   document.getElementById('unidad').style.display = "none";
   document.getElementById('lb_unidad').style.display = "none";
+  document.getElementById('C_unidad').style.display = "none";
+  //document.getElementById('cantidad_unidad').style.display = "none";
      }     
 }
 </script>
 
 
 <label>PRESENTACION</label><br>
-<input name="chec" type="checkbox" id="chec" onChange="comprobar1(this);"/>
+<input  type="checkbox" id="chec" onChange="comprobar1(this);"/>
     <label for="chec">UNIDAD</label>
 
-<input name="chec" type="checkbox" id="chec" onChange="comprobar2(this);" 
+<input type="checkbox" id="chec2" onChange="comprobar2(this);" 
 style="margin-left: 30px;" />
-    <label for="chec">CAJA</label>
+    <label for="chec2">CAJA</label>
 
 
 <div class="form-group">
@@ -215,12 +223,24 @@ style="margin-left: 30px;" />
     <input name="uni_prod" type="number" class="form-control"
        id="unidad" style="display:none" placeholder="PRECIO UNIDAD">
   </div>
+<div class="form-group" id="C_unidad" style="display:none">
+      <label for="cantidad_U">CANTIDAD DE UNIDADES</label>
+    <input name="cantidad_unidad" type="text" class="form-control"
+       id="cantidad_unidad" placeholder="CANTIDAD DE UNIDADES">
+</div>
 
- <div class="form-group">
-      <label for="boton" id="lb_caja" style="display:none">PRECIO POR CAJA</label>
+
+<div class="form-group">
+      <label style="display:none" for="boton" id="lb_caja">PRECIO POR CAJA</label>
     <input name="caj_prod" type="number" class="form-control"
-       id="caja" style="display:none" placeholder="PRECIO CAJA">
-  </div> 
+       id="caja" placeholder="PRECIO CAJA" style="display:none">
+</div> 
+<div class="form-group" id="C_caja" style="display:none">
+      <label for="cantidad_C">CANTIDAD DE CAJAS</label>
+    <input name="cantidad_caja" type="number" class="form-control"
+       id="cantidad_caja" placeholder="CANTIDAD DE CAJAS">
+</div>
+
 
 
 <div class="form-group">

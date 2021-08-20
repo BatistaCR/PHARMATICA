@@ -51,33 +51,114 @@ while($t = mysqli_fetch_array($exe)){ ?>
 <!--BREADCRUM-->
 
 
-<form action="#" method="POST">
+<form action="BD/insert_carro_compra.php" method="POST">
   <div class="container">
   <div class="row pf-03 ja-center my-05">
-          <img class="img-escalada-full" src="img/productos/<?php echo $t['img_producto']; ?>" alt="...">
+    <img class="img-escalada-full" src="img/productos/<?php echo $t['img_producto']; ?>" alt="...">
 
+
+<input type="hidden" name="id_prod_detalle" value="<?php echo $t['id_prod_inv']; ?>">
+
+
+<script type="text/javascript">
+
+
+
+function changeFunc(){
+var caja = document.getElementById("caja");
+var unidad = document.getElementById("unidad");
+var selectBox = document.getElementById("selectBox");
+var tipo_compra = selectBox.options[selectBox.selectedIndex].value;
+//var caja = selectBox.options[selectBox.selectedIndex].value="UNIDAD";
+   // alert(selectedValue);
+
+if (tipo_compra === "CAJA") {
+    unidad.style.display = "none";
+    caja.style.display = "";
+}else if (tipo_compra === "UNIDAD") {
+    unidad.style.display = "";
+    caja.style.display = "none";
+}
+
+}
+
+
+
+</script>
 
 
 
 <div class="col text-center">
 <h1 class="fs-06 fw-06" ><?php echo $t['nombre_prod_inv']; ?></h1>
 <?php 
-              if($t['precio_unidad'] == "" AND $t['precio_caja'] != "") {  ?>
-                <p class="fs-03">PRECIO POR CAJA</p>
-                <p class="fs-05 cr-red">₡<?php  echo $t['precio_caja']; ?>+i.v.a.</p>
-            <?php  }elseif($t['precio_unidad'] != ""){ ?>
-            <p class="fs-03">PRECIO POR UNIDAD</p>
-            <p class="fs-05 cr-red">₡<?php echo $t['precio_unidad']; ?>+i.v.a.</p>
-          <?php  }else{
+  if($t['precio_unidad'] != "" AND $t['precio_caja'] === ""){ ?>
+    <div id="unidad" style="display:;"> 
+         <p class="fs-03">PRECIO POR UNIDAD</p>
+         <p class="fs-05 cr-red">₡<?php echo $t['precio_unidad']; ?>+i.v.a.</p>
+    </div>
+  
+
+<?php  }elseif($t['precio_unidad'] === "" AND $t['precio_caja'] != "") {  ?>
+    <div id="caja" style="display:;"> 
+         <p class="fs-03">PRECIO POR CAJA</p>
+         <p class="fs-05 cr-red">₡<?php  echo $t['precio_caja']; ?>+i.v.a.
+         </p>
+    </div>
+<?php  }
+elseif($t['precio_unidad'] != "" AND $t['precio_caja'] != "") {  ?>
+    <div id="unidad" style="display:;"> 
+         <p class="fs-03">PRECIO POR UNIDAD</p>
+         <p class="fs-05 cr-red">₡<?php echo $t['precio_unidad']; ?>+i.v.a.</p>
+    </div> 
+
+    <div id="caja" style="display:none;"> 
+         <p class="fs-03">PRECIO POR CAJA</p>
+         <p class="fs-05 cr-red">₡<?php  echo $t['precio_caja']; ?>+i.v.a.
+         </p>
+    </div>
+<?php  }else{
             echo "<p class='fs-05'>VER DETALLES</p>";
-            }
-            ?>
+      }
+?>
+
+<label for="fo">TIPO DE COMPRA</label>
+   <?php
+     
+      $pre = "SELECT * FROM  t_inventario_general_web WHERE id_prod_inv = '$id'";
+      $resultado= mysqli_query($conexion,$pre);
+   
+    ?>
+   <select class="custom-select"
+    name="tipoProd" id="selectBox" onchange="changeFunc();">
+    <?php    
+      while ( $row = mysqli_fetch_array($resultado)){
+
+        $precio_unidad = $row['precio_unidad'];
+        $precio_caja = $row['precio_caja'];
+
+        if ($precio_unidad == "" AND $precio_caja != "") {  ?>
+         
+    <option value="CAJA">CAJA</option>
+
+      <?php }elseif($precio_unidad != "" AND $precio_caja == ""){ ?>
+
+        <option value="UNIDAD">UNIDAD</option>
+
+       <?php }elseif($precio_unidad != "" AND $precio_caja != ""){ ?>
+        <option value="UNIDAD">UNIDAD</option>
+        <option value="CAJA">CAJA</option>
+   <?php     }
+     ?>
+    
+   <?php } ?> 
+ </select>
+
             <div class="row ">
               <div class="col-12 col-md-5 ja-center fd-column">
             <p class="fs-03">cantidad</p> 
             <div class="fd-row">
             <button type="button" class="btn-box-left" onclick="menos()">-</button>
-            <input class="input" type="number" name="" id="input" value="1" min="1" oninput="this.value = Math.abs(this.value)" 
+            <input class="input" type="number" name="cantidad_productos" id="input" value="1" min="1" max="100" oninput="this.value = Math.abs(this.value)" 
             onKeyUp="pierdeFoco(this)" required>
             <button type="button" class="btn-box-right" onclick="mas()">+</button>
           </div>
