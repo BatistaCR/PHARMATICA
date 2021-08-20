@@ -11,7 +11,7 @@ header("Cache-Control: no-cache, must-revalidate");
  ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 
@@ -99,7 +99,7 @@ header("Cache-Control: no-cache, must-revalidate");
     <div id="page-content-wrapper">
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <button class="btn btn-info" id="menu-toggle"> MENU </button>
+        <button class="btn btn btn-outline-dark" id="menu-toggle"> MENU </button>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -130,7 +130,7 @@ header("Cache-Control: no-cache, must-revalidate");
       </nav>
       <br>
       
-      <div class="col col-lg-12">
+      <div class="container">
 
         <?php
         /*require_once*/
