@@ -22,7 +22,7 @@
     #div_f{
       float: left;
       background-color: red;
-      margin-right: 20px;
+      margin-right: 0px;
     }
 </style>
 
