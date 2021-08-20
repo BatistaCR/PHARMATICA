@@ -1,0 +1,80 @@
+input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+      }
+  input[type=number] { -moz-appearance:textfield; }
+
+
+.btn-box-left{
+  width: 2em;
+  line-height: 75%;
+  font-size: 2vw;
+  background-color:blue;
+  color: white;
+  border-radius: 0.5em 0 0 0.5em;
+}
+
+.btn-box-right{
+  width: 2em;
+  line-height: 75%;
+  font-size: 2vw;
+  background-color:blue;
+  color: white;
+  border-radius: 0 0.5em 0.5em 0;
+}
+
+.contador{
+  border-radius: 0.5rem;
+  border: solid 2px blue;
+  height: 5vw;
+  width: 10vw;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  overflow: hidden;
+}
+
+.input{
+text-align: center;
+width: 5em;
+height: 5vw;
+font-size: 2vw;
+font-weight: 900;
+}
+
+
+/*BOTON DE COMPRA ESPECIAL*/
+.carrito {
+  position: relative;
+  animation-name: out;
+}
+
+@keyframes in {
+  0%   {left:0px; top:0px;}
+  100%  {left:200px; top:0px;}
+}
+
+@keyframes out {
+  0%  {left:200px; top:0px;}
+  100% {left:0px; top:0px;}
+}
+
+
+#carrito:hover .carrito{
+  transition: ease-in;
+  animation-name: in;
+  
+}
+
+
+
+/*FIN BOTON DE COMPRA ESPECIAL*/
+
+@media (max-width: 833px) {
+    .img-escalada-full{
+        object-fit: cover;
+        width: auto;
+        height: 50vw;
+      }
+  }

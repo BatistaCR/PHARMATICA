@@ -39,55 +39,7 @@ while($t = mysqli_fetch_array($exe)){ ?>
 
 <style type="text/css">
 
-input[type=number]::-webkit-inner-spin-button,
-  input[type=number]::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-      }
-  input[type=number] { -moz-appearance:textfield; }
 
-
-.caja{
-  
-overflow: hidden;
-
-}
-
-.caja img{
-  height: 100%;
-    width: 30vh;
-}
-
-.btn-box{
-  width: 2rem;
-  height: 100%;
-  background-color:blue;
-  color: white;
-}
-
-.contador{
-  border-radius: 0.5rem;
-  border: solid 2px blue;
-  width: auto;
-  height: 3rem;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  
-  overflow: hidden;
-}
-
-.input{
-text-align: center;
-width: 2rem;
-}
-
-.btn-carrito{
-  background-color: red;
-  color: white;
-  border-radius: 0.5rem;
-  
-}
 </style>
 
 <!--BREADCRUM-->
@@ -100,13 +52,62 @@ width: 2rem;
 
 
 <form action="#" method="POST">
-<div class="container pf-02 ja-center">
-  <div class="row">
-<div class="col-auto caja">
-          <img src="img/productos/<?php echo $t['img_producto']; ?>" alt="...">
-</div>
+  <div class="container">
+  <div class="row pf-03 ja-center my-05">
+          <img class="img-escalada-full" src="img/productos/<?php echo $t['img_producto']; ?>" alt="...">
 
-<script>
+
+
+
+<div class="col text-center">
+<h1 class="fs-06 fw-06" ><?php echo $t['nombre_prod_inv']; ?></h1>
+<?php 
+              if($t['precio_unidad'] == "" AND $t['precio_caja'] != "") {  ?>
+                <p class="fs-03">PRECIO POR CAJA</p>
+                <p class="fs-05 cr-red">₡<?php  echo $t['precio_caja']; ?>+i.v.a.</p>
+            <?php  }elseif($t['precio_unidad'] != ""){ ?>
+            <p class="fs-03">PRECIO POR UNIDAD</p>
+            <p class="fs-05 cr-red">₡<?php echo $t['precio_unidad']; ?>+i.v.a.</p>
+          <?php  }else{
+            echo "<p class='fs-05'>VER DETALLES</p>";
+            }
+            ?>
+            <div class="row ">
+              <div class="col-12 col-md-5 ja-center fd-column">
+            <p class="fs-03">cantidad</p> 
+            <div class="fd-row">
+            <button type="button" class="btn-box-left" onclick="menos()">-</button>
+            <input class="input" type="number" name="" id="input" value="1" min="1" oninput="this.value = Math.abs(this.value)" 
+            onKeyUp="pierdeFoco(this)" required>
+            <button type="button" class="btn-box-right" onclick="mas()">+</button>
+          </div>
+            </div>
+            <div class="col-12 col-md-7 ja-center mt-03 " id="carrito">
+              <img class="carrito" src="./img/carrito.png" alt="">
+            <button  class="bn bn-red fs-03 ja-center "><span>agregar al carrito</span></button>
+          </div>
+          </div>
+          
+</div>
+</div>
+  
+
+  <?php
+}
+    ?><br>
+</div>
+</form>
+
+
+  <!-- Footer -->
+  <?php include('vistas/footer.php') ?>
+
+  <!-- Scripts -->
+  <?php include('vistas/scripts.php') ?>
+
+    <!-- Script contador -->
+
+  <script>
   
   function mas() {
       document.getElementById("input").value++;
@@ -132,52 +133,6 @@ width: 2rem;
   }
   </script>
 
-
-<div class="col px-05 bc-yellow">
-<h1 class="ts-09" ><b><?php echo $t['nombre_prod_inv']; ?></b></h1>
-<?php 
-              if($t['precio_unidad'] == "" AND $t['precio_caja'] != "") {  ?>
-                <p class="fs-10"><b>PRECIO POR CAJA</b></p>
-                <p class="fs-10 cr-red"><b>₡<?php  echo $t['precio_caja']; ?>+i.v.a.</b></p>
-            <?php  }elseif($t['precio_unidad'] != ""){ ?>
-            <p class="fs-10"><b>PRECIO POR UNIDAD</b></p>
-            <p class="fs-10 cr-red"><b>₡<?php echo $t['precio_unidad']; ?>+i.v.a.</b></p>
-          <?php  }else{
-            echo "<p class='fs-10'><b>VER DETALLES</b></p>";
-            }
-            ?>
-            <div class="bc-red row ja-center ta-center fd-row">
-              <div class="col-6">
-            <p class="fs-05">cantidad</p> 
-            <div class="fd-row contador bc-blue">
-            <button type="button" class="btn-box" onclick="menos()">-</button>
-            <input class="input" type="number" name="" id="input" value="1" min="1" oninput="this.value = Math.abs(this.value)" 
-            onKeyUp="pierdeFoco(this)" required>
-            <button type="button" class="btn-box" onclick="mas()">+</button>
-          </div>
-            </div>
-            <div class="col-6">
-            <button class="btn-carrito pf-03" type="submit"><b>IR AL CARRITO </b> </button>
-          </div>
-          </div>
-          
-</div>
-</div>
-  
-
-  <?php
-}
-    ?>
-  </div><br>
-
-</form>
-
-
-  <!-- Footer -->
-  <?php include('vistas/footer.php') ?>
-
-  <!-- Scripts -->
-  <?php include('vistas/scripts.php') ?>
 </body>
 
 </html>
