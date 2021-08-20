@@ -10,6 +10,8 @@ $caj_prod = trim($_POST['caj_prod']);
 $deta_prod = trim($_POST['deta_prod']);
 $ing_prod = trim($_POST['ing_prod']);
 $contra_prod = trim($_POST['contra_prod']);
+$cantidad_unidad = trim($_POST['c_unidad']);
+$cantidad_caja = trim($_POST['c_caja']);
 
 /*comprobaciones de input file (IMG´S)*/
 
@@ -70,7 +72,9 @@ $act = "UPDATE t_inventario_general_web SET
   ingrediente_prod = '$ing_prod',
   contraindicaciones_prod = '$contra_prod',
   img_producto2= '$img2',
-  img_producto3= '$img3'
+  img_producto3= '$img3',
+  cantidad_prod_unidades= '$cantidad_unidad', 
+  cantidad_prod_cajas= '$cantidad_caja'
 WHERE id_prod_inv = '$id_prod' ";
 
     $exe69 = mysqli_query($conexion,$act);

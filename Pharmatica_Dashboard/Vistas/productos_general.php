@@ -70,12 +70,23 @@ include("./conexion.php");
        id="unidad"  value="<?php echo $e['precio_unidad'];  ?>">
   </div>
 
+  <div class="form-group">
+      <label for="boton" id="lb_unidad">CANTIDAD POR UNIDAD</label>
+    <input name="c_unidad" type="number" class="form-control"
+       id="unidad"  value="<?php echo $e['cantidad_prod_unidades'];  ?>">
+  </div>
+
  <div class="form-group">
       <label for="boton" id="lb_caja">PRECIO POR CAJA</label>
     <input name="caj_prod" type="number" class="form-control"
        id="caja"  value="<?php echo $e['precio_caja'];  ?>">
   </div> 
 
+  <div class="form-group">
+      <label for="boton" id="lb_unidad">CANTIDAD POR CAJA</label>
+    <input name="c_caja" type="number" class="form-control"
+       id="unidad"  value="<?php echo $e['cantidad_prod_cajas'];  ?>">
+  </div>
 
 <div class="form-group">
     <label for="exampleFormControlTextarea1">DETALLES</label>

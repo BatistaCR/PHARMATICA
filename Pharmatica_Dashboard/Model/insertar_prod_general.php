@@ -53,11 +53,14 @@ $caj_prod = trim($_POST['caj_prod']);
 $deta_prod = trim($_POST['deta_prod']);
 $ing_prod = trim($_POST['ing_prod']);
 $contra_prod = trim($_POST['contra_prod']);
+$cantidad_unidad = trim($_POST['cantidad_unidad']);
+$cantidad_caja = trim($_POST['cantidad_caja']);
 
 $insert ="INSERT INTO t_inventario_general_web(nombre_prod_inv,img_producto,
-	codigo_producto,precio_unidad,precio_caja,detalle_prod,ingrediente_prod,	contraindicaciones_prod,img_producto2,img_producto3)
+	codigo_producto,precio_unidad,precio_caja,detalle_prod,ingrediente_prod,
+    contraindicaciones_prod,img_producto2,img_producto3,cantidad_prod_unidades, cantidad_prod_cajas)
 	VALUES('$n_prod','$img1','$c_prod','$uni_prod','$caj_prod','$deta_prod',
-	'$ing_prod','$contra_prod','$img2','$img3')";
+	'$ing_prod','$contra_prod','$img2','$img3','$cantidad_unidad','$cantidad_caja')";
 
 $exe = mysqli_query($conexion,$insert);
 
