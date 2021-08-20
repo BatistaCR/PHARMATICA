@@ -23,6 +23,18 @@
 						break;
 					case 'DeleteProductos':
 						include_once'./Vistas./delete_prod_inv.php';
+						break;
+					case 'Clientes_General':
+						include_once'./Vistas./clientes_regulares.php';
+						break;
+					case 'Actualizar_Cliente':
+						include_once'./Vistas./actualizar_cliente.php';
+						break;	
+					case 'Desactivar_Regular':
+						include_once'./Vistas./desactivar_cliente_regular.php';
+						break;
+					case 'Mensajeria':
+						include_once'./Vistas./mensajeria_principal.php';
 						break;	
 					
 					

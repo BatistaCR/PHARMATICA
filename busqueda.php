@@ -5,7 +5,7 @@ header("Cache-Control: no-cache, must-revalidate");
         $no = $_SESSION['u_usuario'];
      // echo "CON REGISTRO".$no;
       }else{   
-       // echo "SIN REGISTRO";
+       // echo  "SIN REGISTRO";
       //header("location:../../pharmatica/sesion.php");
       }
  ?>

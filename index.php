@@ -24,7 +24,7 @@ header("Cache-Control: no-cache, must-revalidate");
 
   <!-- Categorías -->
   <?php include('vistas/category.php'); ?>
-
+  
     <!-- productos -->
     <?php include('vistas/productos.php'); ?>
 

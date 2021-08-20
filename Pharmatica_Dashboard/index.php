@@ -55,9 +55,9 @@ header("Cache-Control: no-cache, must-revalidate");
 
         <a href="?ir=Wait" id="link_a" class="list-group-item list-group-item-action" style="background-color: #000000; color: #fff;">INICIO</a>
         <a href="?ir=RegistDiario" class="list-group-item list-group-item-action" style="background-color: #000000;  color: #fff;">ORDENES</a>
-        <a href="?ir=List" class="list-group-item list-group-item-action" style="background-color: #000000;  color: #fff;">CLIENTES</a>
+        <a href="?ir=Clientes_General" class="list-group-item list-group-item-action" style="background-color: #000000;  color: #fff;">CLIENTES</a>
         <a href="?ir=PRODUCTOS" class="list-group-item list-group-item-action" style="background-color: #000000;  color: #fff;">PRODUCTOS</a>
-        <a href="?ir=Inv" class="list-group-item list-group-item-action" style="background-color: #000000;  color: #fff;">MENSAJERIA</a>
+        <a href="?ir=Mensajeria" class="list-group-item list-group-item-action" style="background-color: #000000;  color: #fff;">MENSAJERIA</a>
        <!-- <a href="?ir=Regs" class="list-group-item list-group-item-action bg-light">Registro Nuevo</a>-->
 
        <!-------  INVENTARIO MENU 

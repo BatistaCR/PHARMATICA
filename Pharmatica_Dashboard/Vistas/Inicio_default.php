@@ -7,14 +7,14 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Modem´s Activos</div>
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">CLIENTES GENERALES</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">
                        <?php 
                         include('./conexion.php');
-             $cont1 = "SELECT COUNT(*) id_mac_activa FROM mac_activa ";
+             $cont1 = "SELECT COUNT(*) id_user_general FROM t_usuarios_general WHERE  tipo_usuario = '2'";
              $resu1 = mysqli_query($conexion,$cont1);
              $fila1 = mysqli_fetch_assoc($resu1);
-             echo $fila1['id_mac_activa'];
+             echo $fila1['id_user_general'];
                          ?>
                       </div>
                     </div>
@@ -32,7 +32,7 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Modem´s Disponibles</div>
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">COMPRAS REALIZADAS</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">
                         <?php 
                 $cont2 = "SELECT COUNT(*)  id_mac_disponible FROM mac_registro_total_disponibles ";
@@ -57,7 +57,7 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                        INVENTARIO HFC
+                        MENSAJES DE BANDEJA
                       </div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">

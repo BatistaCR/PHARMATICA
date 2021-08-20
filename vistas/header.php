@@ -64,7 +64,7 @@ while($t = mysqli_fetch_array($exe)){
                       <?php 
                        if ($nivel == 1) {
                        ?>
-                       <li><a class="dropdown-item" href="Pharmatica_Dashboard/">Panel Admin</a></li>
+                       <li><a class="dropdown-item" href="Pharmatica_Dashboard/" target="_blank">Panel Admin</a></li>
                      <?php } ?>
                       <li><a class="dropdown-item" href="#">Perfil</a></li>
                       <li><a class="dropdown-item" href="BD/exit.php">Cerrar Sesion</a></li>

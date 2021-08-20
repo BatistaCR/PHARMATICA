@@ -75,49 +75,6 @@ WHERE id_prod_inv = '$id_prod' ";
 
     $exe69 = mysqli_query($conexion,$act);
     header('location:../../Pharmatica_Dashboard/?ir=PRODUCTOS');
-
-
-
-
-    /*if (empty($_FILES["fotoFM"]["name"])) {
-
-    	$nombreCliente = trim($_POST['nombreCliente']);
-    $celCliente = trim($_POST['celCliente']);
-    $webCliente = trim($_POST['webCliente']);
-    $tituloWEB = trim($_POST['tituloWEB']);
-    	
-
-      $act = "UPDATE cliente_fm SET nombreCliente = '$nombreCliente', 
-    telefonoCliente = '$celCliente', webCliente = '$webCliente',
-    tituloWeb = '$tituloWEB' WHERE idCliente = '$idFM' ";
-
-    $exe69 = mysqli_query($conexion,$act);
-    header('location:../?ir=Clientes');
-
-
-    }else{
-    	
-
-    $nombreCliente = trim($_POST['nombreCliente']);
-    $celCliente = trim($_POST['celCliente']);
-    $webCliente = trim($_POST['webCliente']);
-
-    $imagenFM=$_FILES["fotoFM"]["name"];
-    $ruta=$_FILES["fotoFM"]["tmp_name"];
-
-	  $destino="../ARCHIVOS/ImgClientesFM/".$imagenFM;
-    copy($ruta,$destino);
-
-    $destino2="../../Colosal_FM/IMG/ImagenesClientes/".$imagenFM;
-    $copy2 = copy($ruta,$destino2);
-
-
-    $act = "UPDATE cliente_fm SET imgCliente = '$imagenFM', nombreCliente = '$nombreCliente', telefonoCliente = '$celCliente', webCliente = '$webCliente', tituloWeb = '$tituloWEB' WHERE idCliente = '$idFM' ";
-
-    $exe69 = mysqli_query($conexion,$act);
-    header('location:../?ir=Clientes');
-    }*/
-
    
 
 ?>

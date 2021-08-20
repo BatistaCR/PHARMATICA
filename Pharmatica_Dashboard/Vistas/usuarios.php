@@ -1,9 +1,9 @@
 <div class="col col-lg-6" style="margin-left: 10%;">
-  <h5 style="float: right; color: #721804;">Usuarios con Acceso</h5>
+  <h5 style="float: right; color: #721804;">Usuarios con Acceso Administrativo</h5>
 
 <?php 
 include('./conexion.php');
-$query = "SELECT * from t_usuarios_general
+$query = "SELECT * from t_usuarios_general WHERE  tipo_usuario = 1
  ORDER BY id_user_general DESC";
 //$query = "CALL TraerUsuarios()";
 $sql = mysqli_query($conexion, $query);
