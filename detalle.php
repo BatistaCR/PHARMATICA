@@ -88,10 +88,6 @@ while($t = mysqli_fetch_array($exe)){
     e.value = valor;
   }
 
-let nombre = 'aLEX';
-
-
-
 function changeFunc(){
   
 //  document.write(nombre);
@@ -160,9 +156,10 @@ elseif($t['precio_unidad'] != "" AND $t['precio_caja'] != "") {
          <p class="fs-05 cr-red">₡<?php  echo $t['precio_caja']; ?>+i.v.a.
          </p>
     </div>
-<?php  }else{
+<?php  
+       }else{
             echo "<p class='fs-05'>VER DETALLES</p>";
-      }
+       }
 ?>
 
 <label for="fo">TIPO DE COMPRA</label>
