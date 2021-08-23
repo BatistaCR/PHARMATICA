@@ -125,15 +125,16 @@ header("Cache-Control: no-cache, must-revalidate");
     <div id="page-content-wrapper">
 
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <button type="button" class="btn btn-danger ms-4" id="menu-toggle"><i class="bi bi-arrow-left-right"></i></button>
+      <div class="container-fluid">
+        <button type="button" class="btn btn-danger" id="menu-toggle"><i class="bi bi-arrow-left-right"></i></button>
 
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-          <ul class="nav nav-pills nav-fill ">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="nav nav-pills nav-fill">
             <li class="nav-item active">
               <a class="nav-link" href="index.php"><h5><?php echo $no; ?></h5><span class="sr-only"></span></a>
             </li>
@@ -152,6 +153,7 @@ header("Cache-Control: no-cache, must-revalidate");
               </ul>
             </li>
           </ul>
+        </div>
         </div>
       </nav>
       <br>

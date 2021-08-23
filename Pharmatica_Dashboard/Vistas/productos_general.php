@@ -421,7 +421,7 @@ $query = "SELECT * FROM t_inventario_general_web ORDER BY id_prod_inv  DESC
 $sql = mysqli_query($conexion, $query);
 
 echo "
-
+         <div class='col-auto'>
          <table class='table table-bordered table-dark border-primary table-hover' id='tabla_g'>
          <thead class='thead-dark'>
          <tr>
@@ -449,7 +449,7 @@ while ($f = mysqli_fetch_array($sql)) {
   echo "</tr>";
 }
 echo "</table>";
-
+echo "</div>";
 ?>
 
 
@@ -471,6 +471,8 @@ echo "</table>";
 echo "<a href= '../Pharmatica_Dashboard/?ir=PRODUCTOS&pagina==$total_paginas' > "/*."Ultima"*/."</a></center>";
        ?>
 </div>
+
+
 </div> <!--container-->
 </div><!--row-->
 
