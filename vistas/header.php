@@ -66,6 +66,8 @@ while($t = mysqli_fetch_array($exe)){
                        ?>
                        <li><a class="dropdown-item" href="Pharmatica_Dashboard/" target="_blank">Panel Admin</a></li>
                      <?php } ?>
+                     <li><a class="dropdown-item" href="./orden.php">Mis Ordenes</a></li>
+                     <li><a class="dropdown-item" href="Pharmatica_Dashboard/" target="_blank">Favoritos</a></li>
                       <li><a class="dropdown-item" href="#">Perfil</a></li>
                       <li><a class="dropdown-item" href="BD/exit.php">Cerrar Sesion</a></li>
                      
