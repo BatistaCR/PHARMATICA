@@ -15,14 +15,21 @@ header("Cache-Control: no-cache, must-revalidate");
 
 <head>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Registro Interno Cc</title>
-
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
   <link href="css/simple-sidebar.css" rel="stylesheet">
 
@@ -98,32 +105,32 @@ header("Cache-Control: no-cache, must-revalidate");
     
     <div id="page-content-wrapper">
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <button class="btn btn btn-outline-dark" id="menu-toggle"> MENU </button>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button type="button" class="btn btn-danger ms-4" id="menu-toggle"><i class="bi bi-arrow-left-right"></i></button>
+
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="nav nav-pills nav-fill ">
             <li class="nav-item active">
-              <a class="nav-link" href="index.php"><h5><?php echo $no; ?></h5><span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index.php"><h5><?php echo $no; ?></h5><span class="sr-only"></span></a>
             </li>
             <!--<li class="nav-item">
               <a class="nav-link" href="#">Link</a>
             </li>-->
+
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                ADMINISTRACION
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="?ir=Profile">Perfil</a>
-                <a class="dropdown-item" href="?ir=USERS">Usuarios</a>
-                <a class="dropdown-item" href="?ir=RegUser">Registrar Usuario</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="Control/unset.php">Salir</a>
-              </div>
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">ADMINISTRACION</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="?ir=Profile">Perfil</a></li>
+                <li><a class="dropdown-item" href="?ir=USERS">Usuarios</a></li>
+                <li><a class="dropdown-item" href="?ir=RegUser">Registrar Usuario</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="Control/unset.php">Cerrar Sesión</a></li>
+              </ul>
             </li>
           </ul>
         </div>
@@ -141,14 +148,18 @@ header("Cache-Control: no-cache, must-revalidate");
       </div>
     </div>
   </div>
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
   <script>
     $("#menu-toggle").click(function(e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
   </script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+
+
 
 </body>
 </html>

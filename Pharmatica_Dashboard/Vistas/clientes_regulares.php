@@ -36,12 +36,13 @@ include("./conexion.php");
  $sql = mysqli_query($conexion, $query);
 
  echo "
-         <table class='table table-hover table-success'>
-         <thead class='thead-light'>
+ <div class='table-responsive'>
+         <table class='table table-info table-striped table-hover'>
+         <thead class='thead-dark'>
          <tr>
          <th scope='col'>NOMBRE</th>
          <th scope='col'>IDENTIFICACIÓN</th>
-         <th scope='col'>TELEFONO 1</th>
+         <th scope='col'>TELEFONO</th>
          <th scope='col'>CORREO ELECTRONICO</th>
          <th scope='col'>ESTATUS</th>
          <th scope='col'>FECHA REGISTRO</th>
@@ -69,6 +70,7 @@ include("./conexion.php");
   echo "</tr>";
  }
  echo "</table>";
+ echo " </div>";
  ?>
    
    <div class="paginador">

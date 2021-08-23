@@ -21,7 +21,6 @@
     }
     #div_f{
       float: left;
-      background-color: red;
       margin-right: 0px;
     }
 </style>
@@ -37,7 +36,7 @@ include("./conexion.php");
 
     while ($e = mysqli_fetch_array($eje)) { ?>
 
-
+<div class="container">
 <div class="col-4" id="div_f">
 <form action="./Model/actualizar_prod_general.php" method="POST"  enctype="multipart/form-data">
 
@@ -297,8 +296,9 @@ $query = "SELECT * FROM t_inventario_general_web ORDER BY id_prod_inv  DESC
 $sql = mysqli_query($conexion, $query);
 
 echo "
-         <table class='table table-hover table-success' id='tabla_g'>
-         <thead class='thead-light'>
+
+         <table class='table table-bordered table-dark border-primary table-hover' id='tabla_g'>
+         <thead class='thead-dark'>
          <tr>
          <th scope='col'>CODIGO</th>
          <th scope='col'>NOMBRE</th>
@@ -346,6 +346,6 @@ echo "</table>";
 echo "<a href= '../Pharmatica_Dashboard/?ir=PRODUCTOS&pagina==$total_paginas' > "/*."Ultima"*/."</a></center>";
        ?>
 </div>
-
+</div>
 
 
