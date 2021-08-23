@@ -1,8 +1,18 @@
 <?php
+
+ include("BD/conexion.php");
 header("Cache-Control: no-cache, must-revalidate"); 
      session_start();
       if (isset($_SESSION['u_usuario'])) {
         $no = $_SESSION['u_usuario'];
+$select_user = "SELECT * FROM  t_usuarios_general
+ WHERE nombre_user_general = '$no' ";
+$exe_u = mysqli_query($conexion,$select_user);
+while($u = mysqli_fetch_array($exe_u)){
+ $id_cliente = $u['id_user_general'];
+}
+
+
      // echo "CON REGISTRO".$no;
       }else{   
        // echo "SIN REGISTRO";
@@ -28,8 +38,6 @@ header("Cache-Control: no-cache, must-revalidate");
     <?php 
 $id = trim($_GET['id']);
 
-    include("BD/conexion.php");
-
 
 $consul = "SELECT * FROM  t_inventario_general_web WHERE id_prod_inv  = '$id' ";
 
@@ -42,7 +50,7 @@ while($t = mysqli_fetch_array($exe)){
 ?>
 <style type="text/css">
 
-
+  
 </style>
 
 <!--BREADCRUM-->
@@ -57,7 +65,7 @@ while($t = mysqli_fetch_array($exe)){
 <form action="BD/insert_carro_compra.php" method="POST">
   <div class="container">
   <div class="row pf-03 ja-center my-05">
-    <img class="img-escalada-full" src="img/productos/<?php echo $t['img_producto']; ?>" alt="...">
+                                    
 
 
 <input type="hidden" name="id_prod_detalle" value="<?php echo $t['id_prod_inv']; ?>">
@@ -193,6 +201,8 @@ elseif($t['precio_unidad'] != "" AND $t['precio_caja'] != "") {
     
    <?php } ?> 
  </select>
+
+<input type="hidden" name="id_cliente" value="<?php $id_cliente; ?>">
 
   <div class="row ">
     <div class="col-12 col-md-5 ja-center fd-column">
