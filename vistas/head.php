@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="css/registro.css">
     <link rel="stylesheet" href="css/sesion.css">
     <link rel="stylesheet" href="css/detalle.css">
+    <link href="css/simple-sidebar.css" rel="stylesheet">
     
 
 

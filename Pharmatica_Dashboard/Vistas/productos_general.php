@@ -1,29 +1,14 @@
-<style type="text/css">
-  .ida{
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration: none;
-    color: black;
-}
-.ida:hover{
-    text-decoration: overline;
-    }
-    .paginador{
-      margin-top: 350px;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
 
-    }
-    a{
-    	color: black;
-    }
-    #tabla_g{
-      width: 65%;
-      float: left;
-    }
-    #div_f{
-      float: left;
-      margin-right: 0px;
-    }
-</style>
 
 
 <?php 
@@ -36,14 +21,19 @@ include("./conexion.php");
 
     while ($e = mysqli_fetch_array($eje)) { ?>
 
-<div class="container">
-<div class="col-4" id="div_f">
+<div class="container ">
+  <div class="row">
+
+
+    <!-------------------------INICIO ACTUALIZAR PRODUCTO-------------------------------->
+<div class="col-4 " id="div_f">
 <form action="./Model/actualizar_prod_general.php" method="POST"  enctype="multipart/form-data">
 
 <!--<div class="form-group">
     <label for="exampleFormControlFile1">IMAGEN</label>
     <input type="file" name="img_prod[]" class="form-control-file" id="exampleFormControlFile1" multiple>
   </div>-->
+
 <input type="hidden" name="id_prod" value="<?php echo $e['id_prod_inv']; ?>">
 
 <input type="hidden" name="img1" value="<?php echo $e['img_producto']; ?>">
@@ -120,6 +110,7 @@ var lb1 = document.getElementById("label1");
 }*/
 </script>
 
+
 <div style="width:100%">
   <div style="background-color: ; width:30%; float: left ;">
    <label> 
@@ -159,8 +150,10 @@ var lb1 = document.getElementById("label1");
   }else{
 ?>
 
+    <!-------------------------FINAL ACTUALIZAR PRODUCTO-------------------------------->
 
 
+<!--INGRESO VIEJO
 <div class="col-4" id="div_f">
 <form action="./Model/insertar_prod_general.php" method="POST"  enctype="multipart/form-data">
 
@@ -273,6 +266,138 @@ style="margin-left: 30px;" />
 <input type="submit" name="" class="btn btn-success">
         </form>
 
+</div>-->
+
+    <!-------------------------INICIO INGRESAR PRODUCTO-------------------------------->
+
+
+
+    <div class="text-center">
+        <h4 class="titulo-registro mb-3">PRODUCTOS</h4>
+        <p>
+          Ingrese los datos para el producto
+        </p>
+      </div>
+<div class="col-4 ta-center" id="div_f">
+<form class="login-div pf-02" action="./Model/insertar_prod_general.php" method="POST"  enctype="multipart/form-data">
+
+  <div class="mb-3">
+  <label for="formFileMultiple" class="form-label">SELECCIONE 3 IMAGENES</label>
+  <input class="form-control" type="file" name="img_prod[]" id="formFileMultiple" multiple>
+</div>
+
+  <div class="form-floating mb-3">
+  <input name="c_prod" type="text" class="form-control" id="floatingInput" placeholder="CODIGO">
+  <label for="floatingInput">CODIGO</label>
+</div>
+
+
+  <div class="form-floating mb-3">
+  <input name="n_prod" type="text" class="form-control" id="floatingInput" placeholder="NOMBRE">
+  <label for="floatingInput">NOMBRE</label>
+</div>
+
+<script type="text/javascript">
+function comprobar2(obj)
+  {   
+      if (obj.checked){
+        
+  document.getElementById('caja').style.display = "";
+  document.getElementById('lb_caja').style.display = "";
+  document.getElementById('C_caja').style.display = "";
+  //document.getElementById('cantidad_unidad').style.display = "";
+     } else{
+        
+  document.getElementById('caja').style.display = "none";
+  document.getElementById('lb_caja').style.display = "none";
+  document.getElementById('C_caja').style.display = "none";
+  //document.getElementById('cantidad_unidad').style.display = "none";
+     }     
+}
+
+function comprobar1(obj)
+  {   
+      if (obj.checked){
+        
+  document.getElementById('unidad').style.display = "";
+  document.getElementById('lb_unidad').style.display = "";
+  document.getElementById('C_unidad').style.display = "";
+ // document.getElementById('cantidad_caja').style.display = "";
+     } else{
+        
+  document.getElementById('unidad').style.display = "none";
+  document.getElementById('lb_unidad').style.display = "none";
+  document.getElementById('C_unidad').style.display = "none";
+  //document.getElementById('cantidad_unidad').style.display = "none";
+     }     
+}
+</script>
+
+
+<label class="mb-03">PRESENTACION</label>
+
+<div class="form-check form-check-inline mb-03">
+  <input class="form-check-input" type="checkbox" value="option1" id="chec" onChange="comprobar1(this);">
+  <label class="form-check-label" for="chec">UNIDAD</label>
+  </div>
+
+  <div class="form-check form-check-inline mb-03">
+  <input class="form-check-input" type="checkbox" value="option2" id="chec2" onChange="comprobar2(this);">
+  <label class="form-check-label" for="chec2">CAJA</label>
+</div>
+
+<div class="form-floating mb-3" >
+  <input name="uni_prod" type="number" class="form-control" id="unidad" placeholder="PRECIO UNIDADES" style="display:none">
+  <label for="uni_prod" id="lb_unidad" style="display:none">PRECIO UNIDADES</label>
+</div>
+
+<div class="form-floating mb-3" id="C_unidad" style="display:none">
+  <input name="cantidad_unidad" type="text" class="form-control" id="cantidad_unidad" placeholder="CANTIDAD UNIDADES">
+  <label for="cantidad_U">CANTIDAD UNIDADES</label>
+</div>
+
+
+<!--AQUI VOY, AGREGANDO EL BOOSTRAP A LA SELECCION DE CAJA-->
+
+
+<div class="form-group">
+      <label style="display:none" for="boton" id="lb_caja">PRECIO POR CAJA</label>
+    <input name="caj_prod" type="number" class="form-control"
+       id="caja" placeholder="PRECIO CAJA" style="display:none">
+</div> 
+<div class="form-group" id="C_caja" style="display:none">
+      <label for="cantidad_C">CANTIDAD DE CAJAS</label>
+    <input name="cantidad_caja" type="number" class="form-control"
+       id="cantidad_caja" placeholder="CANTIDAD DE CAJAS">
+</div>
+
+
+
+
+
+
+
+
+<div class="form-group">
+    <label for="exampleFormControlTextarea1">DETALLES</label>
+    <textarea name="deta_prod" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">INGREDIENTES</label>
+    <textarea name="ing_prod" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">CONTRAINDICACIONES</label>
+    <textarea name="contra_prod" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+
+
+
+<input type="submit" name="" class="btn btn-success">
+        </form>
+
 </div>
      
 
@@ -346,6 +471,9 @@ echo "</table>";
 echo "<a href= '../Pharmatica_Dashboard/?ir=PRODUCTOS&pagina==$total_paginas' > "/*."Ultima"*/."</a></center>";
        ?>
 </div>
-</div>
+</div> <!--container-->
+</div><!--row-->
 
 
+</body>
+</html>
