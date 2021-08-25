@@ -120,17 +120,11 @@ if (tipo_compra === "CAJA") {
 </script>
 
 
-<!-- INICIO espacio temporal de ima del producto -->
-<style type="text/css">
-  #img1{
-    width: 400px;
-    height: 400px;
-  }
-</style>
+<!-- INICIO IMAGEN PRODUCTO -->
 
-<img id="img1" src="img/productos/<?php echo $t['img_producto']; ?>">
+<img class="img-escalada-full" src="img/productos/<?php echo $t['img_producto']; ?>">
 
-<!-- FIN espacio temporal de ima del producto -->
+<!-- FIN IMAGEN PRODUCTO -->
 
 
 <div class="col text-center">
