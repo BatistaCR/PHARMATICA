@@ -129,7 +129,6 @@ if (tipo_compra === "CAJA") {
 </style>
 
 <img id="img1" src="img/productos/<?php echo $t['img_producto']; ?>">
-
 <!-- FIN espacio temporal de ima del producto -->
 
 
@@ -232,8 +231,7 @@ if (tipo_compra === "CAJA") {
                  if(isset($cantidad_general)){
                    echo $cantidad_general;
                  }else{
-                   echo "<script> document.write(cantidad_general1);
-                         </script>";
+                   
                  }
               ?>">
 
