@@ -42,54 +42,54 @@ include("./conexion.php");
 
 <div class="form-group">
       <label for="exampleInputPassword1">CODIGO</label>
-    <input name="c_prod" type="text" class="form-control"
+    <input name="codigo_producto" type="text" class="form-control"
        id="exampleInputPassword1" value="<?php echo $e['codigo_producto'];  ?>">
   </div>
 
   <div class="form-group">
       <label for="exampleInputPassword1">NOMBRE DEL PRODUCTO</label>
-    <input name="n_prod" type="text" class="form-control"
+    <input name="nombre_producto" type="text" class="form-control"
        id="exampleInputPassword1" value="<?php echo $e['nombre_prod_inv'];  ?>">
   </div>
 
 
 <div class="form-group">
       <label for="boton" id="lb_unidad">PRECIO POR UNIDAD</label>
-    <input name="uni_prod" type="number" class="form-control"
+    <input name="precio_unidad" type="number" class="form-control"
        id="unidad"  value="<?php echo $e['precio_unidad'];  ?>">
   </div>
 
   <div class="form-group">
       <label for="boton" id="lb_unidad">CANTIDAD POR UNIDAD</label>
-    <input name="c_unidad" type="number" class="form-control"
+    <input name="cantidad_unidad" type="number" class="form-control"
        id="unidad"  value="<?php echo $e['cantidad_prod_unidades'];  ?>">
   </div>
 
  <div class="form-group">
       <label for="boton" id="lb_caja">PRECIO POR CAJA</label>
-    <input name="caj_prod" type="number" class="form-control"
+    <input name="precio_caja" type="number" class="form-control"
        id="caja"  value="<?php echo $e['precio_caja'];  ?>">
   </div> 
 
   <div class="form-group">
       <label for="boton" id="lb_unidad">CANTIDAD POR CAJA</label>
-    <input name="c_caja" type="number" class="form-control"
+    <input name="cantidad_caja" type="number" class="form-control"
        id="unidad"  value="<?php echo $e['cantidad_prod_cajas'];  ?>">
   </div>
 
 <div class="form-group">
     <label for="exampleFormControlTextarea1">DETALLES</label>
-    <textarea name="deta_prod" class="form-control" id="exampleFormControlTextarea1" rows="3"><?php echo $e['detalle_prod'];  ?></textarea>
+    <textarea name="detalles_producto" class="form-control" id="exampleFormControlTextarea1" rows="3"><?php echo $e['detalle_prod'];  ?></textarea>
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlTextarea1">INGREDIENTES</label>
-    <textarea name="ing_prod" class="form-control" id="exampleFormControlTextarea1" rows="3"><?php echo $e['ingrediente_prod'];  ?></textarea>
+    <textarea name="ingredientes_producto" class="form-control" id="exampleFormControlTextarea1" rows="3"><?php echo $e['ingrediente_prod'];  ?></textarea>
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlTextarea1">CONTRAINDICACIONES</label>
-    <textarea name="contra_prod" class="form-control" id="exampleFormControlTextarea1" rows="3"><?php echo $e['contraindicaciones_prod']; ?></textarea>
+    <textarea name="contraindicaciones_producto" class="form-control" id="exampleFormControlTextarea1" rows="3"><?php echo $e['contraindicaciones_prod']; ?></textarea>
   </div>
 
 <input class="inputFile" type="file" style="display: none;">
@@ -165,13 +165,13 @@ var lb1 = document.getElementById("label1");
 
 <div class="form-group">
       <label for="exampleInputPassword1">CODIGO</label>
-    <input name="c_prod" type="text" class="form-control"
+    <input name="codigo_producto" type="text" class="form-control"
        id="exampleInputPassword1" placeholder="CODIGO DEL PRODUCTO">
   </div>
 
   <div class="form-group">
       <label for="exampleInputPassword1">NOMBRE DEL PRODUCTO</label>
-    <input name="n_prod" type="text" class="form-control"
+    <input name="nombre_producto" type="text" class="form-control"
        id="exampleInputPassword1" placeholder="NOMBRE DEL PRODUCTO">
   </div>
 
@@ -182,13 +182,13 @@ function comprobar2(obj)
         
   document.getElementById('caja').style.display = "";
   document.getElementById('lb_caja').style.display = "";
-  document.getElementById('C_caja').style.display = "";
+  document.getElementById('cantidad_caja').style.display = "";
   //document.getElementById('cantidad_unidad').style.display = "";
      } else{
         
   document.getElementById('caja').style.display = "none";
   document.getElementById('lb_caja').style.display = "none";
-  document.getElementById('C_caja').style.display = "none";
+  document.getElementById('cantidad_caja').style.display = "none";
   //document.getElementById('cantidad_unidad').style.display = "none";
      }     
 }
@@ -199,13 +199,13 @@ function comprobar1(obj)
         
   document.getElementById('unidad').style.display = "";
   document.getElementById('lb_unidad').style.display = "";
-  document.getElementById('C_unidad').style.display = "";
+  document.getElementById('cantidad_unidad').style.display = "";
  // document.getElementById('cantidad_caja').style.display = "";
      } else{
         
   document.getElementById('unidad').style.display = "none";
   document.getElementById('lb_unidad').style.display = "none";
-  document.getElementById('C_unidad').style.display = "none";
+  document.getElementById('cantidad_unidad').style.display = "none";
   //document.getElementById('cantidad_unidad').style.display = "none";
      }     
 }
@@ -223,10 +223,10 @@ style="margin-left: 30px;" />
 
 <div class="form-group">
       <label for="boton" id="lb_unidad" style="display:none">PRECIO POR UNIDAD</label>
-    <input name="uni_prod" type="number" class="form-control"
+    <input name="precio_unidad" type="number" class="form-control"
        id="unidad" style="display:none" placeholder="PRECIO UNIDAD">
   </div>
-<div class="form-group" id="C_unidad" style="display:none">
+<div class="form-group" id="cantidad_unidad" style="display:none">
       <label for="cantidad_U">CANTIDAD DE UNIDADES</label>
     <input name="cantidad_unidad" type="text" class="form-control"
        id="cantidad_unidad" placeholder="CANTIDAD DE UNIDADES">
@@ -235,10 +235,10 @@ style="margin-left: 30px;" />
 
 <div class="form-group">
       <label style="display:none" for="boton" id="lb_caja">PRECIO POR CAJA</label>
-    <input name="caj_prod" type="number" class="form-control"
+    <input name="precio_caja" type="number" class="form-control"
        id="caja" placeholder="PRECIO CAJA" style="display:none">
 </div> 
-<div class="form-group" id="C_caja" style="display:none">
+<div class="form-group" id="cantidad_caja" style="display:none">
       <label for="cantidad_C">CANTIDAD DE CAJAS</label>
     <input name="cantidad_caja" type="number" class="form-control"
        id="cantidad_caja" placeholder="CANTIDAD DE CAJAS">
@@ -248,17 +248,17 @@ style="margin-left: 30px;" />
 
 <div class="form-group">
     <label for="exampleFormControlTextarea1">DETALLES</label>
-    <textarea name="deta_prod" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea name="detalles_producto" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlTextarea1">INGREDIENTES</label>
-    <textarea name="ing_prod" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea name="ingredientes_producto" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlTextarea1">CONTRAINDICACIONES</label>
-    <textarea name="contra_prod" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea name="contraindicaciones_producto" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
 
 
@@ -287,13 +287,13 @@ style="margin-left: 30px;" />
 </div>
 
   <div class="form-floating mb-3">
-  <input name="c_prod" type="text" class="form-control" id="floatingInput" placeholder="CODIGO">
+  <input name="codigo_producto" type="text" class="form-control" id="floatingInput" placeholder="CODIGO">
   <label for="floatingInput">CODIGO</label>
 </div>
 
 
   <div class="form-floating mb-3">
-  <input name="n_prod" type="text" class="form-control" id="floatingInput" placeholder="NOMBRE">
+  <input name="nombre_producto" type="text" class="form-control" id="floatingInput" placeholder="NOMBRE">
   <label for="floatingInput">NOMBRE</label>
 </div>
 
@@ -303,15 +303,9 @@ function comprobar2(obj)
       if (obj.checked){
         
   document.getElementById('caja').style.display = "";
-  document.getElementById('lb_caja').style.display = "";
-  document.getElementById('C_caja').style.display = "";
-  //document.getElementById('cantidad_unidad').style.display = "";
      } else{
         
   document.getElementById('caja').style.display = "none";
-  document.getElementById('lb_caja').style.display = "none";
-  document.getElementById('C_caja').style.display = "none";
-  //document.getElementById('cantidad_unidad').style.display = "none";
      }     
 }
 
@@ -320,23 +314,18 @@ function comprobar1(obj)
       if (obj.checked){
         
   document.getElementById('unidad').style.display = "";
-  document.getElementById('lb_unidad').style.display = "";
-  document.getElementById('C_unidad').style.display = "";
- // document.getElementById('cantidad_caja').style.display = "";
      } else{
         
   document.getElementById('unidad').style.display = "none";
-  document.getElementById('lb_unidad').style.display = "none";
-  document.getElementById('C_unidad').style.display = "none";
-  //document.getElementById('cantidad_unidad').style.display = "none";
      }     
 }
 </script>
 
-
-<label class="mb-03">PRESENTACION</label>
-
 <!--CHECKBOXS-->
+<div class="form-check form-check-inline mb-03">
+  <label class="form-check-label" for="chec">PRESENTACION:</label>
+  </div>
+
 <div class="form-check form-check-inline mb-03">
   <input class="form-check-input" type="checkbox" value="option1" id="chec" onChange="comprobar1(this);">
   <label class="form-check-label" for="chec">UNIDAD</label>
@@ -348,56 +337,52 @@ function comprobar1(obj)
 </div>
 
 <!--INPUTS UNIDADES-->
-<div class="form-floating mb-3" id="lb_unidad" style="display:none">
-  <input name="uni_prod" type="number" class="form-control" id="unidad" placeholder="PRECIO UNIDADES">
-  <label for="uni_prod">PRECIO UNIDADES</label>
-</div>
+<div class="fd-row jc-between" id="unidad" style="display:none">
+  <div class="form-floating mb-3 col-5">
+    <input name="precio_unidad" type="number" class="form-control" placeholder="PRECIO UNIDAD">
+    <label for="precio_unidad">PRECIO</label>
+  </div>
 
-<div class="form-floating mb-3" id="C_unidad" style="display:none">
-  <input name="cantidad_unidad" type="text" class="form-control" id="cantidad_unidad" placeholder="CANTIDAD UNIDADES">
-  <label for="cantidad_U">CANTIDAD UNIDADES</label> 
-</div>
-
-
-<!--AQUI VOY, AGREGANDO EL BOOSTRAP A LA SELECCION DE CAJA-->
-
-
-<div class="form-group">
-      <label style="display:none" for="boton" id="lb_caja">PRECIO POR CAJA</label>
-    <input name="caj_prod" type="number" class="form-control"
-       id="caja" placeholder="PRECIO CAJA" style="display:none">
-</div> 
-<div class="form-floating mb-3" id="C_caja" style="display:none">
-      <label for="cantidad_C">CANTIDAD DE CAJAS</label>
-    <input name="cantidad_caja" type="number" class="form-control"
-       id="cantidad_caja" placeholder="CANTIDAD DE CAJAS">
+  <div class="form-floating mb-3 col-5">
+    <input name="cantidad_unidad" type="text" class="form-control" placeholder="CANTIDAD UNIDADES">
+    <label for="cantidad_unidad">CANTIDAD</label> 
+  </div>
 </div>
 
 
-
-
-
-
-
-
-<div class="form-group">
-    <label for="exampleFormControlTextarea1">DETALLES</label>
-    <textarea name="deta_prod" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+<!--INPUTS CAJAS-->
+<div class="fd-row jc-between" id="caja" style="display:none">
+  <div class="form-floating mb-3 col-5">
+    <input name="precio_caja" type="number" class="form-control" id="caja" placeholder="PRECIO CAJA">
+    <label for="boton" id="lb_caja">PRECIO</label>
   </div>
 
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">INGREDIENTES</label>
-    <textarea name="ing_prod" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  <div class="form-floating mb-3 col-5">
+    <input name="cantidad_caja" type="number" class="form-control" id="caja" placeholder="CANTIDAD CAJA">
+    <label for="boton" id="lb_caja">CANTIDAD</label>
+  </div>
+</div>
+
+<!--INPUTS TEXTO-->
+
+  <div class="form-floating mb-3">
+  <textarea name="detalles_producto" class="form-control" placeholder="Detalles" id="floatingTextarea2" style="height: 150px"></textarea>
+  <label for="floatingTextarea2">DETALLES</label>
   </div>
 
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">CONTRAINDICACIONES</label>
-    <textarea name="contra_prod" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  <div class="form-floating mb-3">
+  <textarea name="ingredientes_producto" class="form-control" placeholder="Ingredientes" id="floatingTextarea2" style="height: 150px"></textarea>
+  <label for="floatingTextarea2">INGREDIENTES</label>
   </div>
 
 
+  <div class="form-floating mb-3">
+  <textarea name="contraindicaciones_producto" class="form-control" placeholder="Contraindicaciones" id="floatingTextarea2" style="height: 150px"></textarea>
+  <label for="floatingTextarea2">CONTRAINDICACIONES</label>
+  </div>
 
-<input type="submit" name="" class="btn btn-success">
+<!--BOTON ACTUALIZAR-->
+  <button class="btn btn-primary" type="submit" name="">Button</button>
         </form>
 
 </div>
