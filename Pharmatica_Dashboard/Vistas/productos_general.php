@@ -148,7 +148,7 @@ var lb1 = document.getElementById("label1");
 <?php   
 /*@derechos reservados*/
   }else{
-?>
+?>  
 
     <!-------------------------FINAL ACTUALIZAR PRODUCTO-------------------------------->
 
@@ -336,6 +336,7 @@ function comprobar1(obj)
 
 <label class="mb-03">PRESENTACION</label>
 
+<!--CHECKBOXS-->
 <div class="form-check form-check-inline mb-03">
   <input class="form-check-input" type="checkbox" value="option1" id="chec" onChange="comprobar1(this);">
   <label class="form-check-label" for="chec">UNIDAD</label>
@@ -346,14 +347,15 @@ function comprobar1(obj)
   <label class="form-check-label" for="chec2">CAJA</label>
 </div>
 
-<div class="form-floating mb-3" >
-  <input name="uni_prod" type="number" class="form-control" id="unidad" placeholder="PRECIO UNIDADES" style="display:none">
-  <label for="uni_prod" id="lb_unidad" style="display:none">PRECIO UNIDADES</label>
+<!--INPUTS UNIDADES-->
+<div class="form-floating mb-3" id="lb_unidad" style="display:none">
+  <input name="uni_prod" type="number" class="form-control" id="unidad" placeholder="PRECIO UNIDADES">
+  <label for="uni_prod">PRECIO UNIDADES</label>
 </div>
 
 <div class="form-floating mb-3" id="C_unidad" style="display:none">
   <input name="cantidad_unidad" type="text" class="form-control" id="cantidad_unidad" placeholder="CANTIDAD UNIDADES">
-  <label for="cantidad_U">CANTIDAD UNIDADES</label>
+  <label for="cantidad_U">CANTIDAD UNIDADES</label> 
 </div>
 
 
@@ -365,7 +367,7 @@ function comprobar1(obj)
     <input name="caj_prod" type="number" class="form-control"
        id="caja" placeholder="PRECIO CAJA" style="display:none">
 </div> 
-<div class="form-group" id="C_caja" style="display:none">
+<div class="form-floating mb-3" id="C_caja" style="display:none">
       <label for="cantidad_C">CANTIDAD DE CAJAS</label>
     <input name="cantidad_caja" type="number" class="form-control"
        id="cantidad_caja" placeholder="CANTIDAD DE CAJAS">

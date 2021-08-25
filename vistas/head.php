@@ -21,7 +21,6 @@
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/pc_style.css">
-    <link rel="stylesheet" href="css/phone_style.css">
     <link rel="stylesheet" href="css/carousel.css">
     <link rel="stylesheet" href="css/category.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -30,7 +29,6 @@
     <link rel="stylesheet" href="css/registro.css">
     <link rel="stylesheet" href="css/sesion.css">
     <link rel="stylesheet" href="css/detalle.css">
-    <link href="css/simple-sidebar.css" rel="stylesheet">
     
 
 
