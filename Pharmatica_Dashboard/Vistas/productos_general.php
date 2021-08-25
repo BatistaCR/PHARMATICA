@@ -283,7 +283,7 @@ style="margin-left: 30px;" />
 
   <div class="mb-3">
   <label for="formFileMultiple" class="form-label">SELECCIONE 3 IMAGENES</label>
-  <input class="form-control" type="file" name="img_prod[]" id="formFileMultiple" multiple>
+  <input class="form-control form-control-lg" type="file" name="img_prod[]" id="formFileMultiple" multiple>
 </div>
 
   <div class="form-floating mb-3">
