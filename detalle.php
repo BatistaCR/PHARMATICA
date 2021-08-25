@@ -1,24 +1,19 @@
 <?php
-
- include("BD/conexion.php");
+include("BD/conexion.php");
 header("Cache-Control: no-cache, must-revalidate"); 
      session_start();
       if (isset($_SESSION['u_usuario'])) {
         $no = $_SESSION['u_usuario'];
-$select_user = "SELECT * FROM  t_usuarios_general
- WHERE nombre_user_general = '$no' ";
-$exe_u = mysqli_query($conexion,$select_user);
-while($u = mysqli_fetch_array($exe_u)){
- $id_cliente = $u['id_user_general'];
-}
-
-
-     // echo "CON REGISTRO".$no;
+    $select_user = "SELECT * FROM  t_usuarios_general
+     WHERE nombre_user_general = '$no' ";
+    $exe_u = mysqli_query($conexion,$select_user);
+    while($u = mysqli_fetch_array($exe_u)){
+     $id_cliente = $u['id_user_general'];
+    }
       }else{   
-       // echo "SIN REGISTRO";
-      //header("location:../../PHARMATICAS/PHARMATICAS/sesion.php");
+      header("location:../../PHARMATICAS/PHARMATICAS/sesion.php");
       }
- ?>
+?>
  
 <!DOCTYPE html>
 <html lang="es">
@@ -27,31 +22,28 @@ while($u = mysqli_fetch_array($exe_u)){
 
 <body>
   <!-- Header -->
-  <?php include('vistas/header.php') ?>
+<?php include('vistas/header.php') ?>
 
   <!-- Categorías -->
-  <?php include('vistas/category.php'); ?>
+<?php include('vistas/category.php'); ?>
+<br>
 
-  <br>
+<div  style=" width:100%;">
+    
+<?php 
+/*variable de producto y consulta principal de datos*/
+  $id = trim($_GET['id']);
+  $consul = "SELECT * FROM  t_inventario_general_web WHERE 
+    id_prod_inv  = '$id' ";
 
-  <div  style=" width:100%;">
-    <?php 
-$id = trim($_GET['id']);
+  $exe = mysqli_query($conexion,$consul);
 
+    while($t = mysqli_fetch_array($exe)){ 
 
-$consul = "SELECT * FROM  t_inventario_general_web WHERE id_prod_inv  = '$id' ";
-
-$exe = mysqli_query($conexion,$consul);
-
-while($t = mysqli_fetch_array($exe)){ 
-
-  $cantidad_unidad1 = $t['cantidad_prod_unidades'];
-  $cantidad_caja1 = $t['cantidad_prod_cajas'];
+      $cantidad_unidad1 = $t['cantidad_prod_unidades'];
+      $cantidad_caja1 = $t['cantidad_prod_cajas'];
 ?>
-<style type="text/css">
 
-  
-</style>
 
 <!--BREADCRUM-->
 <nav aria-label="breadcrumb" class="bc-black py-01">
@@ -61,14 +53,13 @@ while($t = mysqli_fetch_array($exe)){
 </nav>
 <!--BREADCRUM-->
 
-
+<!-- inicio de formulario de envio -->
 <form action="BD/insert_carro_compra.php" method="POST">
   <div class="container">
-  <div class="row pf-03 ja-center my-05">
-                                    
-
-
-<input type="hidden" name="id_prod_detalle" value="<?php echo $t['id_prod_inv']; ?>">
+    <div class="row pf-03 ja-center my-05">
+      <!-- input oculto de envio de ID del product -->                       
+      <input type="hidden" name="id_prod_detalle" 
+        value="<?php echo $t['id_prod_inv']; ?>">
 
 
 <script type="text/javascript">
@@ -127,7 +118,8 @@ if (tipo_compra === "CAJA") {
 
 
 <div class="col text-center">
-<h1 class="fs-06 fw-06" ><?php echo $t['nombre_prod_inv']; ?></h1>
+  
+  <h1 class="fs-06 fw-06" ><?php echo $t['nombre_prod_inv']; ?></h1>
 <?php 
   if($t['precio_unidad'] != "" AND $t['precio_caja'] === ""){ 
      $cantidad_general = $t['cantidad_prod_unidades'];
