@@ -226,8 +226,7 @@ if (tipo_compra === "CAJA") {
                  if(isset($cantidad_general)){
                    echo $cantidad_general;
                  }else{
-                   echo "<script> document.write(cantidad_general1);
-                         </script>";
+                   
                  }
               ?>">
 
