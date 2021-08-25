@@ -117,11 +117,20 @@ if (tipo_compra === "CAJA") {
 }
 
 }
-
-
-
 </script>
 
+
+<!-- INICIO espacio temporal de ima del producto -->
+<style type="text/css">
+  #img1{
+    width: 400px;
+    height: 400px;
+  }
+</style>
+
+<img id="img1" src="img/productos/<?php echo $t['img_producto']; ?>">
+
+<!-- FIN espacio temporal de ima del producto -->
 
 
 <div class="col text-center">
