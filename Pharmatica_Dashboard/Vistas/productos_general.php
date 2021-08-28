@@ -381,8 +381,8 @@ function comprobar1(obj)
   <label for="floatingTextarea2">CONTRAINDICACIONES</label>
   </div>
 
-<!--BOTON ACTUALIZAR-->
-  <button class="btn btn-primary" type="submit" name="">Button</button>
+<!--BOTON INGRESAR-->
+  <button class="btn btn-primary" type="submit" name="">INGRESAR</button>
         </form>
 
 </div>
