@@ -1,3 +1,20 @@
+<?php
+include("BD/conexion.php");
+header("Cache-Control: no-cache, must-revalidate"); 
+     session_start();
+      if (isset($_SESSION['u_usuario'])) {
+        $no = $_SESSION['u_usuario'];
+    $select_user = "SELECT * FROM  t_usuarios_general
+     WHERE nombre_user_general = '$no' ";
+    $exe_u = mysqli_query($conexion,$select_user);
+    while($u = mysqli_fetch_array($exe_u)){
+     $id_cliente = $u['id_user_general'];
+    }
+      }else{   
+      header("location:../../PHARMATICA/sesion.php");
+      }
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <!-- Head -->
