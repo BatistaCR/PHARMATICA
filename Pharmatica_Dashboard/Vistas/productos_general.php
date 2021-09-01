@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
 
-
-
+<!-------------------------CONEXION BD-------------------------------->
 <?php 
 include("./conexion.php");
 
@@ -21,94 +10,111 @@ include("./conexion.php");
 
     while ($e = mysqli_fetch_array($eje)) { ?>
 
-<div class="container ">
+
+
+<div class="container">
   <div class="row">
 
 
     <!-------------------------INICIO ACTUALIZAR PRODUCTO-------------------------------->
-<div class="col-4 " id="div_f">
-<form action="./Model/actualizar_prod_general.php" method="POST"  enctype="multipart/form-data">
+    <div class="ta-center mb-03">
+        <h4 class="titulo-registro mb-3">PRODUCTOS</h4>
+        <p>
+          Ingrese los nuevos datos del producto 
+        </p>
+    </div>
+      <div class="col-6 ta-center" id="div_f">
+<form class="login-div pf-02" action="./Model/actualizar_prod_general.php" method="POST"  enctype="multipart/form-data">
 
-<!--<div class="form-group">
+<!--<div class="form-group mb-03">
     <label for="exampleFormControlFile1">IMAGEN</label>
     <input type="file" name="img_prod[]" class="form-control-file" id="exampleFormControlFile1" multiple>
   </div>-->
-
+  
 <input type="hidden" name="id_prod" value="<?php echo $e['id_prod_inv']; ?>">
 
 <input type="hidden" name="img1" value="<?php echo $e['img_producto']; ?>">
 <input type="hidden" name="img2" value="<?php echo $e['img_producto2']; ?>">
 <input type="hidden" name="img3" value="<?php echo $e['img_producto3']; ?>">
 
-<div class="form-group">
-      <label for="exampleInputPassword1">CODIGO</label>
+<div class="form-group mb-03">
+      <label for="exampleInputPassword1"><b>CODIGO</b></label>
     <input name="c_prod" type="text" class="form-control"
        id="exampleInputPassword1" value="<?php echo $e['codigo_producto'];  ?>">
   </div>
 
-  <div class="form-group">
-      <label for="exampleInputPassword1">NOMBRE DEL PRODUCTO</label>
+  <div class="form-group mb-03">
+      <label for="exampleInputPassword1"><b>NOMBRE DEL PRODUCTO</b></label>
     <input name="n_prod" type="text" class="form-control"
        id="exampleInputPassword1" value="<?php echo $e['nombre_prod_inv'];  ?>">
   </div>
 
-
-<div class="form-group">
-      <label for="boton" id="lb_unidad">PRECIO POR UNIDAD</label>
+<label for="boton" id="lb_unidad"><b>UNIDAD</b></label>
+<div class="fd-row jc-between">
+<div class="form-group mb-03 col-6 pr-01">
+      <label for="boton" id="lb_unidad">PRECIO</label>
     <input name="uni_prod" type="number" class="form-control"
        id="unidad"  value="<?php echo $e['precio_unidad'];  ?>">
   </div>
 
-  <div class="form-group">
-      <label for="boton" id="lb_unidad">CANTIDAD POR UNIDAD</label>
+  <div class="form-group mb-03 col-6 pl-01">
+      <label for="boton" id="lb_unidad">CANTIDAD</label>
     <input name="c_unidad" type="number" class="form-control"
        id="unidad"  value="<?php echo $e['cantidad_prod_unidades'];  ?>">
   </div>
-
- <div class="form-group">
+  </div>
+  
+  <label for="boton" id="lb_unidad"><b>CAJA</b></label>
+  <div class="fd-row jc-between">
+ <div class="form-group mb-03 col-6 pr-01">
       <label for="boton" id="lb_caja">PRECIO POR CAJA</label>
     <input name="caj_prod" type="number" class="form-control"
        id="caja"  value="<?php echo $e['precio_caja'];  ?>">
   </div> 
 
-  <div class="form-group">
+  <div class="form-group mb-03 col-6 pl-01">
       <label for="boton" id="lb_unidad">CANTIDAD POR CAJA</label>
     <input name="c_caja" type="number" class="form-control"
        id="unidad"  value="<?php echo $e['cantidad_prod_cajas'];  ?>">
   </div>
-
-<div class="form-group">
-    <label for="exampleFormControlTextarea1">DETALLES</label>
-    <textarea name="deta_prod" class="form-control" id="exampleFormControlTextarea1" rows="3"><?php echo $e['detalle_prod'];  ?></textarea>
   </div>
 
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">INGREDIENTES</label>
-    <textarea name="ing_prod" class="form-control" id="exampleFormControlTextarea1" rows="3"><?php echo $e['ingrediente_prod'];  ?></textarea>
+<div class="form-group mb-03">
+    <label for="exampleFormControlTextarea1"><b>DETALLES</b></label>
+    <textarea name="deta_prod" class="form-control" id="exampleFormControlTextarea1" style="height: 150px"><?php echo $e['detalle_prod'];  ?></textarea>
   </div>
 
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">CONTRAINDICACIONES</label>
-    <textarea name="contra_prod" class="form-control" id="exampleFormControlTextarea1" rows="3"><?php echo $e['contraindicaciones_prod']; ?></textarea>
+  <div class="form-group mb-03">
+    <label for="exampleFormControlTextarea1"><b>INGREDIENTES</b></label>
+    <textarea name="ing_prod" class="form-control" id="exampleFormControlTextarea1" style="height: 150px"><?php echo $e['ingrediente_prod'];  ?></textarea>
   </div>
+
+  <div class="form-group mb-03">
+    <label for="exampleFormControlTextarea1"><b>CONTRAINDICACIONES</b></label>
+    <textarea name="contra_prod" class="form-control" id="exampleFormControlTextarea1" style="height: 150px"><?php echo $e['contraindicaciones_prod']; ?></textarea>
+  </div>
+
+  <label for="exampleInputPassword1"><b>IMAGENES</b></label>
 
 <input class="inputFile" type="file" style="display: none;">
-<script type="text/javascript">
 
-/*function editarIMG1()
-  {  
-var x = document.getElementById("upd_img1");
-var lb1 = document.getElementById("label1");
-    if (x.style.display === "none") {
-       
-       x.style.display = "";
-       lb1.style.display = "";
-    }else{
-      x.style.display = "none";
-      lb1.style.display = "none";
-    }    
-}*/
-</script>
+                    <!--SCRIPT ACTUALIZAR SIN USO
+                    <script type="text/javascript">
+
+                    /*function editarIMG1()
+                      {  
+                    var x = document.getElementById("upd_img1");
+                    var lb1 = document.getElementById("label1");
+                        if (x.style.display === "none") {
+                          
+                          x.style.display = "";
+                          lb1.style.display = "";
+                        }else{
+                          x.style.display = "none";
+                          lb1.style.display = "none";
+                        }    
+                    }*/
+                    </script>-->
 
 
 <div style="width:100%">
@@ -138,49 +144,42 @@ var lb1 = document.getElementById("label1");
 
 
 <br><br><br><br><br><br>
-<input type="submit" name="" class="btn btn-success" value="ACTUALIZAR"><br><br>
+<input type="submit" name="" class="btn btn-primary btn-lg mr-02" value="ACTUALIZAR">
+<input type="submit" name="" class="btn btn-danger btn-lg ml-02" value="CANCELAR"><br><br>
         </form>
 
 </div>
      
-
-
-
-<?php   
-/*@derechos reservados*/
-  }else{
-?>  
-
     <!-------------------------FINAL ACTUALIZAR PRODUCTO-------------------------------->
 
 
+<?php
+  }else{
+?>  
     <!-------------------------INICIO INGRESAR PRODUCTO-------------------------------->
-
-
-
-    <div class="text-center">
+    <div class="text-center mb-03">
         <h4 class="titulo-registro mb-3">PRODUCTOS</h4>
         <p>
           Ingrese los datos para el producto
         </p>
       </div>
-<div class="col-4 ta-center" id="div_f">
+<div class="col-6 ta-center" id="div_f">
 <form class="login-div pf-02" action="./Model/insertar_prod_general.php" method="POST"  enctype="multipart/form-data">
 
   <div class="mb-3">
-  <label for="formFileMultiple" class="form-label">SELECCIONE 3 IMAGENES</label>
+  <label for="formFileMultiple" class="form-label"><b>SELECCIONE 3 IMAGENES</b></label>
   <input class="form-control form-control-lg" type="file" name="img_prod[]" id="formFileMultiple" multiple>
 </div>
 
   <div class="form-floating mb-3">
   <input name="c_prod" type="text" class="form-control" id="floatingInput" placeholder="CODIGO">
-  <label for="floatingInput">CODIGO</label>
+  <label for="floatingInput"><b>CODIGO</b></label>
 </div>
 
 
   <div class="form-floating mb-3">
   <input name="n_prod" type="text" class="form-control" id="floatingInput" placeholder="NOMBRE">
-  <label for="floatingInput">NOMBRE</label>
+  <label for="floatingInput"><b>NOMBRE</b></label>
 </div>
 
 <script type="text/javascript">
@@ -209,7 +208,7 @@ function comprobar1(obj)
 
 <!--CHECKBOXS-->
 <div class="form-check form-check-inline mb-03">
-  <label class="form-check-label" for="chec">PRESENTACION:</label>
+  <label class="form-check-label" for="chec"><b>PRESENTACION:</b></label>
   </div>
 
 <div class="form-check form-check-inline mb-03">
@@ -224,12 +223,12 @@ function comprobar1(obj)
 
 <!--INPUTS UNIDADES-->
 <div class="fd-row jc-between" id="unidad" style="display:none">
-  <div class="form-floating mb-3 col-5">
+  <div class="form-floating mb-3 col-6 pr-01">
     <input name="uni_prod" type="number" class="form-control" placeholder="PRECIO UNIDAD">
     <label for="precio_unidad">PRECIO UNIDAD</label>
   </div>
 
-  <div class="form-floating mb-3 col-5">
+  <div class="form-floating mb-3 col-6 pl-01">
     <input name="cantidad_unidad" type="text" class="form-control" placeholder="CANTIDAD UNIDADES">
     <label for="cantidad_unidad">CANTIDAD UNIDAD</label> 
   </div>
@@ -238,12 +237,12 @@ function comprobar1(obj)
 
 <!--INPUTS CAJAS-->
 <div class="fd-row jc-between" id="caja" style="display:none">
-  <div class="form-floating mb-3 col-5">
+  <div class="form-floating mb-3 col-6 pr-01">
     <input name="caj_prod" type="number" class="form-control" id="caja" placeholder="PRECIO CAJA">
     <label for="boton" id="lb_caja">PRECIO CAJA</label>
   </div>
 
-  <div class="form-floating mb-3 col-5">
+  <div class="form-floating mb-3 col-6 pl-01">
     <input name="cantidad_caja" type="number" class="form-control" id="caja" placeholder="CANTIDAD CAJA">
     <label for="boton" id="lb_caja">CANTIDAD CAJA</label>
   </div>
@@ -253,31 +252,34 @@ function comprobar1(obj)
 
   <div class="form-floating mb-3">
   <textarea name="deta_prod" class="form-control" placeholder="Detalles" id="floatingTextarea2" style="height: 150px"></textarea>
-  <label for="floatingTextarea2">DETALLES</label>
+  <label for="floatingTextarea2"><b>DETALLES</b></label>
   </div>
 
   <div class="form-floating mb-3">
   <textarea name="ing_prod" class="form-control" placeholder="Ingredientes" id="floatingTextarea2" style="height: 150px"></textarea>
-  <label for="floatingTextarea2">INGREDIENTES</label>
+  <label for="floatingTextarea2"><b>INGREDIENTES</b></label>
   </div>
 
 
   <div class="form-floating mb-3">
   <textarea name="contra_prod" class="form-control" placeholder="Contraindicaciones" id="floatingTextarea2" style="height: 150px"></textarea>
-  <label for="floatingTextarea2">CONTRAINDICACIONES</label>
+  <label for="floatingTextarea2"><b>CONTRAINDICACIONES</b></label>
   </div>
 
 <!--BOTON INGRESAR-->
-  <button class="btn btn-primary" type="submit" name="">INGRESAR</button>
+  <button class="btn btn-success btn-lg mr-02" type="submit" name="">INGRESAR</button>
+  <button class="btn btn-danger btn-lg ml-02" type="clear" name="">BORRAR</button>
         </form>
 
 </div>
      
-
+<!-------------------------FINAL INGRESAR PRODUCTO-------------------------------->
 
 <?php 
 
 }
+
+
 
 //include("./conexion.php");
 $por_pagina = 25;
@@ -293,11 +295,11 @@ $query = "SELECT * FROM t_inventario_general_web ORDER BY id_prod_inv  DESC
 
 $sql = mysqli_query($conexion, $query);
 
-echo "
-         <div class='col-auto'>
-         <table class='table table-bordered table-dark border-primary table-hover' id='tabla_g'>
-         <thead class='thead-dark'>
-         <tr>
+echo "  
+         <div class='table-responsive col-6 ta-center'>
+         <table class='table table-borderless table-success table-hover' id='tabla_g'>
+         <thead class='thead ta-center'>
+         <tr class='table-info table-active'>
          <th scope='col'>CODIGO</th>
          <th scope='col'>NOMBRE</th>
          <th scope='col'>PRECIO</th>
@@ -313,10 +315,10 @@ while ($f = mysqli_fetch_array($sql)) {
     echo "<td>".$f['precio_unidad']."</td>";
   ?>
 
-  <td><b><a class="lk" href="../Pharmatica_Dashboard/?ir=PRODUCTOS&editar=<?php echo
-   $f['id_prod_inv']?>" title="Mover">EDITAR</a></b></td>
-  <td><b><a class="lk" href="../Pharmatica_Dashboard/?ir=DeleteProductos&id=<?php echo 
-  $f['id_prod_inv']?>">ELIMINAR</a></b></td>
+  <td><b><a class="btn btn-primary bi bi-pencil-square" href="../Pharmatica_Dashboard/?ir=PRODUCTOS&editar=<?php echo
+   $f['id_prod_inv']?>" role="button"></a></b></td>
+  <td><b><a class="btn btn-danger bi bi-eraser" href="../Pharmatica_Dashboard/?ir=DeleteProductos&id=<?php echo 
+  $f['id_prod_inv']?>" role="button"></a></b></td>
   
   <?php
   echo "</tr>";
@@ -348,7 +350,3 @@ echo "<a href= '../Pharmatica_Dashboard/?ir=PRODUCTOS&pagina==$total_paginas' > 
 
 </div> <!--container-->
 </div><!--row-->
-
-
-</body>
-</html>

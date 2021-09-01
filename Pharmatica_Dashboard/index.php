@@ -14,9 +14,6 @@ header("Cache-Control: no-cache, must-revalidate");
 <html lang="es">
 
 <head>
-
-   <!-- Imagenes adaptativas -->
-   <script>document.cookie='resolution='+Math.max(screen.width,screen.height)+'; path=/';</script>
     
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -157,13 +154,15 @@ header("Cache-Control: no-cache, must-revalidate");
       <br>
       
       <div class="container">
+        <div class="row">
 
-        <?php
-        /*require_once*/
-      include_once('./Control./Controlador.php');
-      new control();
-        ?>
+            <?php
+            /*require_once*/
+          include_once('./Control./Controlador.php');
+          new control();
+            ?>
 
+        </div>
       </div>
     </div>
   </div>

@@ -4,7 +4,7 @@
     display: inline-block;
     border-radius: 1.5rem;
     border: solid 3px;
-    min-width: 35vw;
+    max-width: 30vw;
   }
   .titulo-registro{
     display: inline-block;
