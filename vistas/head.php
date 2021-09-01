@@ -26,8 +26,7 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/productos.css">
-    <link rel="stylesheet" href="css/registro.css">
-    <link rel="stylesheet" href="css/sesion.css">
+    <link rel="stylesheet" href="css/form.css">
     <link rel="stylesheet" href="css/detalle.css">
     
 
