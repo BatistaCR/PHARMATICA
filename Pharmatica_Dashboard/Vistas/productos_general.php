@@ -267,7 +267,7 @@ function comprobar1(obj)
   </div>
 
 <!--BOTON INGRESAR-->
-  <button class="btn btn-success btn-lg mr-02" type="submit" name="">INGRESAR</button>
+  <button class="btn btn-success btn-lg mr-02 " type="submit" name="">INGRESAR</button>
   <button class="btn btn-danger btn-lg ml-02" type="clear" name="">BORRAR</button>
         </form>
 
@@ -297,7 +297,7 @@ $sql = mysqli_query($conexion, $query);
 
 echo "  
          <div class='table-responsive col-6 ta-center'>
-         <table class='table table-borderless table-success table-hover' id='tabla_g'>
+         <table class='table table-borderless table-info table-hover' id='tabla_g'>
          <thead class='thead ta-center'>
          <tr class='table-info table-active'>
          <th scope='col'>CODIGO</th>
@@ -315,9 +315,9 @@ while ($f = mysqli_fetch_array($sql)) {
     echo "<td>".$f['precio_unidad']."</td>";
   ?>
 
-  <td><b><a class="btn btn-primary bi bi-pencil-square" href="../Pharmatica_Dashboard/?ir=PRODUCTOS&editar=<?php echo
+  <td><b><a class="btn btn-primary bi bi-pencil-fill" href="../Pharmatica_Dashboard/?ir=PRODUCTOS&editar=<?php echo
    $f['id_prod_inv']?>" role="button"></a></b></td>
-  <td><b><a class="btn btn-danger bi bi-eraser" href="../Pharmatica_Dashboard/?ir=DeleteProductos&id=<?php echo 
+  <td><b><a class="btn btn-danger bi bi-x-lg" href="../Pharmatica_Dashboard/?ir=DeleteProductos&id=<?php echo 
   $f['id_prod_inv']?>" role="button"></a></b></td>
   
   <?php

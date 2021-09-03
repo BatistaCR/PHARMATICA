@@ -25,8 +25,8 @@ header("Cache-Control: no-cache, must-revalidate");
   <!-- Categorías -->
   <?php include('vistas/category.php'); ?>
   
-    <!-- productos -->
-    <?php include('vistas/productos.php'); ?>
+  <!-- productos -->
+  <?php include('vistas/productos.php'); ?>
 
   <div id="mapid" style="height: 400px;"></div>
 
@@ -37,5 +37,4 @@ header("Cache-Control: no-cache, must-revalidate");
   <?php include('vistas/scripts.php') ?>
 
 </body>
-
 </html>
