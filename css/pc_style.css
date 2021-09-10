@@ -408,9 +408,9 @@ iframe {border: none;}
 .ai-baseline{display: flex; align-items: baseline;}
 
 /*JUSTIFICADO Y ALINEAMIENTO*/
-.ja-left{display: flex; justify-content: flex-start; align-items: flex-start;}
+.ja-left{display: flex; justify-content: center; align-items: flex-start;}
 .ja-center{display: flex; justify-content: center; align-items: center;}
-.ja-right{display: flex; justify-content: flex-end; align-items: flex-end;}
+.ja-right{display: flex; justify-content: center; align-items: flex-end;}
 
 
 /*FLEX ITems*/

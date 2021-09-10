@@ -19,20 +19,24 @@ while($t = mysqli_fetch_array($exe)){
       }
  ?>
 
-<nav class="navbar navbar-expand-xl navbar-dark">
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark">
     <div class="container">  
       <a class="navbar-brand" href="index">
         <img class="logo me-3" src="img/logo.png" width="60" height="60" class="d-inline-block" alt="">PHARMATICA
       </a>
+
+      <form class="d-flex mx-auto" action="busqueda" method="POST">
+        <input class="form-control me-2" style="width: 25vw;" type="search" placeholder="Buscar" aria-label="Search">
+        <a class="search-icon ai-center " type="submit" href="busqueda"><img src="img/search-icon.svg" width="30" height="30" alt=""></a>
+      </form>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
+      
           <div class="collapse navbar-collapse" id="navbarSupportedContent">   
-            <form class="d-flex p-2 align-items-center" action="busqueda" method="POST">
-                  <input class="form-control me-2 " type="search" placeholder="Búsqueda" aria-label="Búsqueda" name="busqueda">
-                  <input type="submit" name="" style="display: none;">
-                  <button class="search-icon" href="busqueda"><img src="img/search-icon.svg" width="30" height="30" class="d-inline-block align-center" alt=""></button>
-              </form>
+            
               
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item dropdown">

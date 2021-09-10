@@ -16,6 +16,12 @@
     }
 </style>	
 
+<div class="ta-center mb-03">
+        <h4 class="titulo-registro mb-3">CLIENTES</h4>
+        <p>
+          visualice, edite o desactive los clientes 
+        </p>
+    </div>
 
 <?php  
 
@@ -36,10 +42,10 @@ include("./conexion.php");
  $sql = mysqli_query($conexion, $query);
 
  echo "
- <div class='table-responsive'>
-         <table class='table table-info table-striped table-hover'>
-         <thead class='thead-dark'>
-         <tr>
+ <div class='table-responsive ta-center'>
+         <table class='table table-borderless table-info table-hover'>
+         <thead class='thead-dark '>
+         <tr class='table-info table-active'>
          <th scope='col'>NOMBRE</th>
          <th scope='col'>IDENTIFICACIÓN</th>
          <th scope='col'>TELEFONO</th>
@@ -61,10 +67,10 @@ include("./conexion.php");
     echo "<td>".$f['fecha_registro_user']."</td>";
   ?>
   
-  <td><b><a class="lk" href="../Pharmatica_Dashboard/?ir=Actualizar_Cliente&id=<?php
-  echo $f['id_user_general']?>" title="Mover">EDITAR</a></b></td>
-  <td><b><a class="lk" href="../Pharmatica_Dashboard/?ir=Desactivar_Regular&id=<?php
-   echo $f['id_user_general']?>">DESACTIVAR</a></b></td>
+  <td><b><a class="btn btn-primary bi bi-pencil-fill" href="../Pharmatica_Dashboard/?ir=Actualizar_Cliente&id=<?php
+  echo $f['id_user_general']?> " role="button" title="Mover"></a></b></td>
+  <td><b><a class="btn btn-danger bi bi-exclamation-lg" href="../Pharmatica_Dashboard/?ir=Desactivar_Regular&id=<?php
+   echo $f['id_user_general']?>" role="button"></a></b></td>
   
   <?php
   echo "</tr>";
