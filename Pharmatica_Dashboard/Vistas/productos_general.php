@@ -171,6 +171,31 @@ include("./conexion.php");
   <input class="form-control form-control-lg" type="file" name="img_prod[]" id="formFileMultiple" multiple>
 </div>
 
+
+
+<div>
+  <label for="sel1" class="col-sm-2 col-form-label" id="nc">CATEGORIAS</label>
+
+     <?php
+      $pre = "SELECT * FROM t_categoria_productos";
+      $resultado= mysqli_query($conexion,$pre);
+    ?>
+
+   <select id="sel1" class="form-control" style="width: 80%; margin-left: 15px;" name="categoria_id">
+     <?php    
+      while ( $row = mysqli_fetch_array($resultado)){
+     ?>
+   <option value=" <?php echo $row['id_categoria']; ?> ">
+    <?php echo $row['nombre_categoria']; ?>
+   </option>
+    <?php } ?> 
+   </select>
+</div><br> <br>
+
+
+
+
+
   <div class="form-floating mb-3">
   <input name="c_prod" type="text" class="form-control" id="floatingInput" placeholder="CODIGO">
   <label for="floatingInput"><b>CODIGO</b></label>

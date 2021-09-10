@@ -35,6 +35,12 @@
 						break;
 					case 'Mensajeria':
 						include_once'./Vistas./mensajeria_principal.php';
+						break;
+					case 'CATEGORIAS':
+						include_once'./Vistas./categorias_generales.php';
+						break;
+					case 'AGREGAR_CATEGORIA':
+						include_once'./Vistas./agregar_categoria_producto.php';
 						break;	
 					
 					

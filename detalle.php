@@ -20,7 +20,7 @@ header("Cache-Control: no-cache, must-revalidate");
 <!-- Head -->
 
 <!-- desactiva el clik der e inspeccionar -->
-<body oncontextmenu="return false" >
+<body oncontextmenu="return false" onload="primer_funcion();">
 
 
 <?php include('vistas/head.php') ?>
@@ -32,6 +32,36 @@ header("Cache-Control: no-cache, must-revalidate");
   <!-- Categorías -->
 <?php include('vistas/category.php'); ?>
 <br>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<?php 
+if (isset($_GET['limite_exe'])) { ?>
+
+  <script type="text/javascript">
+  setTimeout(function() {
+    $('#notificacion').fadeOut('fast');
+}, 2000); // <-- time in milliseconds
+</script>
+<style type="text/css">
+  #notificacion{
+    width: 100%;
+    height: 100px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+}
+</style>
+
+<div id="notificacion">
+    !!!CANTIDAD DIGITADA DE PRODUCTOS EXCEDE EL LIMITE DE DISPONIBILIDAD
+</div>
+  
+<?php
+}
+?>
+
+<br><br>
 
 <div  style=" width:100%;">
     
@@ -78,41 +108,46 @@ header("Cache-Control: no-cache, must-revalidate");
 
 <script type="text/javascript">
 
+function primer_funcion(){
+  var var1 = "<?php echo $cantidad_unidad1; ?>";
+  var var2 = "<?php echo $cantidad_caja1; ?>";
+  var var3 = document.getElementById("caja_pri");
+  var var4 = document.getElementById("caja_tercer");
+
+  if (var1 != '0' && var2 != '0' ) {
+    var3.style.display = "none";
+    var4.style.display = "";
+  }
+}
+
+  //document.getElementById("caja_pri").style.display = "none";
+
+
+
 function changeFunc(){
 
 
 if(document.getElementById('selectBox').value == "UNIDAD_M") {
+   
+  document.getElementById("caja_tercer").style.display = "";
+  document.getElementById("caja_pri").style.display = "none";
+  document.getElementById("caja_pri").value = '0';
+  document.getElementById("caja_secun").style.display = "none";
+  document.getElementById("caja_secun").value = '0';
 
-    document.getElementById('caja_pri').style.display = "none";
-    document.getElementById('caja_secun').style.display = "";
-
-
-    function mas_uni() {
-    
-     let valor_actual = document.getElementById("input_caja2").value;
-     var cantidad_general = "<?php echo $precio_unidad; ?>";
-     valor_actual++;
-  
-      if(valor_actual<=cantidad_general){
-         document.getElementById("input_caja2").value=valor_actual++;
-      }
-  }
-  
-  function menos_uni() {
-      var valor = document.getElementById("input_caja2").value;  
-      if (valor == 1) {
-    }else if(valor < 1){
-      document.getElementById("input_caja2").value++;
-    }
-    else{
-        document.getElementById("input_caja2").value--;
-    }
-      
-  }
   
 }
 
+if(document.getElementById('selectBox').value == "CAJA_M") {
 
+   document.getElementById("caja_secun").style.display = "";
+   document.getElementById("caja_pri").style.display = "none";
+   document.getElementById("caja_pri").value = '0';
+   document.getElementById("caja_tercer").style.display = "none";
+   document.getElementById("caja_tercer").value = '0';
+
+  
+}
 
 
   
@@ -225,6 +260,7 @@ if (tipo_compra === "CAJA_M") {
   /*si tiene ambos precios*/
   }elseif($precio_unidad != "" AND $precio_caja != ""){
 ?>
+
   <option value="UNIDAD_M" id="uni">UNIDAD</option>
   <option value="CAJA_M" id="caj">CAJA</option>
 
@@ -233,7 +269,64 @@ if (tipo_compra === "CAJA_M") {
 ?>
 </select>
 
+<script type="text/javascript">
+   /*3DA CAJA*/
+ 
+ function masUni() {
+    
+     let valor_actual_unidad = document.getElementById("input_caja3").value;
+     var cantidad_general_unidad = "<?php echo $cantidad_unidad1; ?>";
+     valor_actual_unidad++;
+  
+      if(valor_actual_unidad<=cantidad_general_unidad){
+         document.getElementById("input_caja3").value=valor_actual_unidad++;
+      }
+  } 
 
+    function menosUni() {
+      var valor_unidad = document.getElementById("input_caja3").value;  
+      if (valor_unidad == 1) {
+    }else if(valor_unidad < 1){
+      document.getElementById("input_caja3").value++;
+    }
+    else{
+        document.getElementById("input_caja3").value--;
+    }
+  }
+
+/*FIN 2DA CAJA*/
+
+</script>
+
+
+<script type="text/javascript">
+   /*2DA CAJA*/
+ 
+ function masCaj() {
+    
+     let valor_actual_caja = document.getElementById("input_caja2").value;
+     var cantidad_general_caja = "<?php echo $cantidad_caja1; ?>";
+     valor_actual_caja++;
+  
+      if(valor_actual_caja<=cantidad_general_caja){
+         document.getElementById("input_caja2").value=valor_actual_caja++;
+      }
+  } 
+
+    function menosCaj() {
+      var valor_caja = document.getElementById("input_caja2").value;  
+      if (valor_caja == 1) {
+    }else if(valor_caja < 1){
+      document.getElementById("input_caja2").value++;
+    }
+    else{
+        document.getElementById("input_caja2").value--;
+    }
+  }
+
+/*FIN 2DA CAJA*/
+
+</script>
 
 <script type="text/javascript">
 
@@ -257,14 +350,12 @@ if (tipo_compra === "CAJA_M") {
     else{
         document.getElementById("input").value--;
     }
-      
   }
 
 
 
-
   window.addEventListener("keydown", function(e) {
-    // space and arrow keys
+    // flechas
     if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
         e.preventDefault();
     }
@@ -287,36 +378,49 @@ if (tipo_compra === "CAJA_M") {
           </button>
 
            <!-- input de cantidad --> 
-          <input class="input" type="number" name="cantidad_productos" 
+          <input class="input" type="number" name="cantidad_productos_general" 
             id="input" value="1" oninput="this.value = Math.abs(this.value)"
              min="1"  required>
 
           <!-- input de menos en el contador -->
           <button type="button" class="btn-box-right" 
-              onclick="mas();">+
+              onclick="mas()">+
           </button>
        </div>
 
-       <!-- CAJA 2 -->
+<!-- CAJA 2 (prod x cajas)-->
        <div class="fd-row" id="caja_secun" style="display:none;">
             <!-- boton de menos en el contador -->
           <button type="button" class="btn-box-left" 
-             onclick="menos_uni()">-
+             onclick="menosCaj()">-
           </button>
 
-           <!-- input de cantidad --> 
-          <input class="input" type="number" name="cantidad_productos" 
+          <!-- input de cantidad --> 
+          <input class="input" type="number" name="cantidad_productos_solo_caja"
             id="input_caja2" value="1" oninput="this.value = Math.abs(this.value)" min="1"  required>
 
           <!-- input de menos en el contador -->
           <button type="button" class="btn-box-right" 
-              onclick="mas_uni();">+
+              onclick="masCaj()">+
           </button>
        </div>
 
+ <!-- CAJA 3 (prod x unidades)-->
+       <div class="fd-row" id="caja_tercer" style="display:none;">
+            <!-- boton de menos en el contador -->
+          <button type="button" class="btn-box-left" 
+             onclick="menosUni()">-
+          </button>
 
+           <!-- input de cantidad --> 
+    <input class="input" type="number" name="cantidad_productos_solo_unidad" 
+            id="input_caja3" value="1" oninput="this.value = Math.abs(this.value)" min="1"  required>
 
-      
+          <!-- input de menos en el contador -->
+          <button type="button" class="btn-box-right" 
+              onclick="masUni()">+
+          </button>
+       </div>
 
   </div>
 

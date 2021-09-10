@@ -25,13 +25,13 @@
   
           <ul class="list-unstyled">
            <li class="mb-2">
-              <a href="#!">Políticas de privacidad</a>
+              <a href="./Politicas_Privacidad.php">Políticas de privacidad</a>
             </li>
             <li class="mb-2">
-              <a href="#!">Politicas de entrega y devolucion</a>
+              <a href="Politicas_Entrega_Devolucion.php">Politicas de entrega y devolucion</a>
             </li>
             <li class="mb-2">
-              <a href="#!">Terminos y condiciones</a>
+              <a href="Terminos_Condiciones.php">Terminos y condiciones</a>
             </li>
           </ul>
   
@@ -68,7 +68,8 @@
   
     <div class="footer-copyright text-center p-4">
         <span> Copyright © 2021 Todos los derechos reservados | </span>
-        <a class="text-reset fw-bold" href="https://bsdesarrollo.com/">BS Desarrollo</a>
+        <a class="text-reset fw-bold" href="https://bsdesarrollo.com/" 
+        target="_blank">BS Desarrollo</a>
         
       </div>
   </footer>

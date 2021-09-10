@@ -79,6 +79,7 @@ header("Cache-Control: no-cache, must-revalidate");
         <a href="?ir=Clientes_General" class="list-group-item list-group-item-action" style="background-color: #000000;  color: #fff;">CLIENTES</a>
         <a href="?ir=PRODUCTOS" class="list-group-item list-group-item-action" style="background-color: #000000;  color: #fff;">PRODUCTOS</a>
         <a href="?ir=Mensajeria" class="list-group-item list-group-item-action" style="background-color: #000000;  color: #fff;">MENSAJERIA</a>
+        <a href="?ir=CATEGORIAS" class="list-group-item list-group-item-action" style="background-color: #000000;  color: #fff;">CATEGORIAS</a>
        <!-- <a href="?ir=Regs" class="list-group-item list-group-item-action bg-light">Registro Nuevo</a>-->
 
        <!-------  INVENTARIO MENU 

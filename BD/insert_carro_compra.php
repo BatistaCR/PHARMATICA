@@ -1,18 +1,22 @@
 <?php 
 include("conexion.php");
 
+echo $cantidad_productos_general = $_POST['cantidad_productos_general'];
+echo $cantidad_productos_solo_caja = $_POST['cantidad_productos_solo_caja'];
+echo $cantidad_productos_solo_unidad = $_POST['cantidad_productos_solo_unidad'];
 
+/*
 $cod_prod_detalle = $_POST['cod_prod_detalle'];
 $cantidad_productos = $_POST['cantidad_productos'];
 $id_cliente = $_POST['id_cliente'];
 $tipoProd = $_POST['tipoProd'];
 
 date_default_timezone_set("America/Costa_Rica");
-     $fecha_registro = date("Y-m-d H:i:s");
+     $fecha_registro = date("Y-m-d H:i:s");*/
 
 /*********/
 
-
+/*
 $select_prod = "SELECT * FROM t_inventario_general_web 
 WHERE codigo_producto = '$cod_prod_detalle' ";
 
@@ -96,6 +100,8 @@ $index++;
 		}else{
 			echo "!!!CANTIDAD DIGITADA DE PRODUCTOS EXCEDE EL
 						 LIMITE DE DISPONIBILIDAD";
+
+		header("location:../detalle.php?id=".$id_prduct_carro."&limite_exe=1");
 		}
 
 
@@ -166,13 +172,15 @@ $index++;
 		}else{
 			echo "!!!CANTIDAD DIGITADA DE PRODUCTOS EXCEDE EL
 						 LIMITE DE DISPONIBILIDAD";
+
+			header("location:../detalle.php?id=".$id_prduct_carro."&limite_exe=1");
 		}
 
 }
 
 
 
-}
+}*/
 
 
 ?>

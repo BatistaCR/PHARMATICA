@@ -41,11 +41,7 @@ include('../conexion.php');
           $copy3 = copy($ruta3,$destino5);
 
 
-
-
-
-
-
+$categoria_id = trim($_POST['categoria_id']);
 $c_prod = trim($_POST['c_prod']);
 $n_prod = trim($_POST['n_prod']);
 $uni_prod = trim($_POST['uni_prod']);
@@ -58,9 +54,9 @@ $cantidad_caja = trim($_POST['cantidad_caja']);
 
 $insert ="INSERT INTO t_inventario_general_web(nombre_prod_inv,img_producto,
 	codigo_producto,precio_unidad,precio_caja,detalle_prod,ingrediente_prod,
-    contraindicaciones_prod,img_producto2,img_producto3,cantidad_prod_unidades, cantidad_prod_cajas)
+    contraindicaciones_prod,img_producto2,img_producto3,cantidad_prod_unidades, cantidad_prod_cajas,categoria_id)
 	VALUES('$n_prod','$img1','$c_prod','$uni_prod','$caj_prod','$deta_prod',
-	'$ing_prod','$contra_prod','$img2','$img3','$cantidad_unidad','$cantidad_caja')";
+	'$ing_prod','$contra_prod','$img2','$img3','$cantidad_unidad','$cantidad_caja','$categoria_id')";
 
 $exe = mysqli_query($conexion,$insert);
 
